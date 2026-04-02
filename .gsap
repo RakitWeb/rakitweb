@@ -1,0 +1,37 @@
+# GSAP Usage Guidelines
+
+When using GSAP in this project, follow these rules:
+
+1. **Cleanup**: Always clean up animations on component unmount to prevent memory leaks and unexpected behavior during navigation.
+   - Use `onUnmounted` or `onBeforeUnmount`.
+   - Preferably use `gsap.context()` for easy cleanup of all animations within a scope.
+
+2. **Nuxt Lifecycle**: 
+   - Initialize GSAP animations inside `onMounted`.
+   - If using Nuxt 4/3, ensure any DOM elements are accessed via template refs.
+
+3. **Performance**:
+   - Use `requestAnimationFrame` friendly properties (x, y, scale, rotation, opacity, etc.).
+   - Avoid animating top, left, width, height unless necessary.
+
+4. **Efficiency**:
+   - Only load/run GSAP on pages that actually use it.
+   - When navigating back to a page, re-trigger animations if desired for the "wow" effect.
+
+Example:
+```vue
+<script setup>
+import gsap from 'gsap'
+
+let ctx;
+onMounted(() => {
+  ctx = gsap.context(() => {
+    gsap.to('.hero-title', { opacity: 1, y: 0, duration: 1 })
+  })
+})
+
+onUnmounted(() => {
+  if (ctx) ctx.revert()
+})
+</script>
+```
