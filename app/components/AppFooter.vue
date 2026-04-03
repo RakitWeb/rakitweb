@@ -199,6 +199,7 @@ const onGiantMove = (e: MouseEvent) => {
             <ul class="space-y-4">
               <li v-for="link in col.children" :key="link.label">
                 <NuxtLink 
+                  to="#"
                   class="relative inline-flex flex-col items-start text-[13px] font-bold text-gray-500 dark:text-gray-400 cursor-pointer group"
                   @mouseenter="onLinkEnter"
                   @mouseleave="onLinkLeave"

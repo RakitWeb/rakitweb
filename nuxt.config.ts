@@ -24,7 +24,8 @@ export default defineNuxtConfig({
   nitro: {
     prerender: {
       routes: [
-        '/'
+        '/',
+        '/akademik/kurikulum'
       ],
       crawlLinks: true
     }

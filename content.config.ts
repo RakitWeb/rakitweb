@@ -16,7 +16,7 @@ const createFeatureItemSchema = () => createBaseSchema().extend({
 
 const createLinkSchema = () => z.object({
   label: z.string().nonempty(),
-  to: z.string().nonempty(),
+  to: z.string().optional(),
   icon: z.string().optional().editor({ input: 'icon' }),
   size: sizeEnum.optional(),
   trailing: z.boolean().optional(),
@@ -87,9 +87,9 @@ export const collections = {
             month: z.string().nonempty(),
             year: z.string().nonempty()
           }),
-          billing_period: z.string().nonempty(),
-          billing_cycle: z.string().nonempty(),
-          button: createLinkSchema(),
+          billing_period: z.string().optional(),
+          billing_cycle: z.string().optional(),
+          button: createLinkSchema().optional(),
           features: z.array(z.string().nonempty()),
           highlight: z.boolean().optional()
         })
