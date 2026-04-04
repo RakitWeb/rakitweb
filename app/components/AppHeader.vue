@@ -125,6 +125,9 @@ onMounted(() => {
   }, headerEl.value!)
 })
 
+const isSearchOpen = useState('search-open')
+const toggleSearch = () => { isSearchOpen.value = true }
+
 onUnmounted(() => {
   ctx?.revert()
   clearTimeout(closeTimeout)
@@ -140,6 +143,17 @@ onUnmounted(() => {
     ref="headerEl"
     class="sticky top-0 z-50 w-full border-b border-border/40 bg-background backdrop-blur-none"
   >
+    <!-- Top Alert Banner (Constrained within navbar borders) -->
+    <div class="max-w-7xl mx-auto border-x border-border/50 bg-[#ef4444] text-white py-1.5 px-5 sm:px-6 flex items-center justify-between text-[10px] font-bold tracking-tight">
+       <div class="flex items-center gap-1.5">
+          <UIcon name="i-lucide-alert-triangle" class="w-3 h-3" />
+          <span>Situs ini bukan resmi SMK Assalaam, redisain by <NuxtLink to="http://davingm.com" target="_blank" class="underline decoration-white/30 underline-offset-2 hover:decoration-white transition-all">@davingm</NuxtLink></span>
+       </div>
+       <NuxtLink to="https://smkassalaambandung.sch.id/" target="_blank" class="flex items-center gap-1 uppercase tracking-widest text-[9px] hover:opacity-80 transition-opacity">
+          Situs Resmi <UIcon name="i-lucide-external-link" class="w-3 h-3" />
+       </NuxtLink>
+    </div>
+
     <div class="max-w-7xl mx-auto border-x border-border/50">
       <div class="flex items-center justify-between h-14 px-5 sm:px-6">
         <!-- Logo -->
@@ -175,7 +189,15 @@ onUnmounted(() => {
 
         <!-- Right -->
         <div class="flex items-center gap-2 nav-enter">
-          <USearchButton class="hidden sm:flex" size="sm" />
+          <button
+            class="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-lg border border-border/40 hover:bg-muted/50 transition-all group"
+            @click="toggleSearch"
+          >
+            <UIcon name="i-lucide-search" class="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
+            <span class="text-[12px] font-medium text-muted-foreground group-hover:text-foreground">Cari...</span>
+            <UKbd value="ctrl" size="sm" class="ml-1 opacity-50 shadow-none border-none bg-transparent" />
+            <UKbd value="k" size="sm" class="opacity-50 shadow-none border-none bg-transparent -ml-1" />
+          </button>
           <UColorModeButton size="sm" />
           <button
             class="lg:hidden p-2 rounded-lg hover:bg-muted/50 transition-colors"
@@ -326,7 +348,13 @@ onUnmounted(() => {
 
         <!-- Search -->
         <div class="mob-item px-5 pt-4 pb-2">
-          <USearchButton class="w-full" label="Cari informasi..." />
+          <button
+            class="w-full flex items-center gap-3 px-4 py-3 rounded-xl bg-muted/40 border border-border/20 text-left"
+            @click="toggleSearch(); closeMobile();"
+          >
+            <UIcon name="i-lucide-search" class="w-5 h-5 text-primary" />
+            <span class="text-sm font-medium text-muted-foreground">Cari informasi...</span>
+          </button>
         </div>
 
         <!-- Nav Items -->

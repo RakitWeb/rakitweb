@@ -13,12 +13,12 @@ useSeoMeta({
 </script>
 
 <template>
-  <main class="relative min-h-[70vh] flex items-center justify-center overflow-hidden bg-slate-950">
-    <!-- Efek Background, Asumsi kita memiliki komponen HeroBackground dan StarsBg atau mengandalkan utility class -->
+  <main class="relative min-h-[70vh] flex items-center justify-center overflow-hidden bg-white dark:bg-[#020618]">
+    <!-- Efek Background -->
     <div class="absolute inset-0 z-0">
-      <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary-900/20 via-slate-950 to-slate-950"></div>
+      <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary-500/10 via-transparent to-transparent dark:from-primary-900/20 dark:via-[#020618] dark:to-[#020618]"></div>
       <!-- Kita bisa reuse komponen yang ada bila perlu -->
-      <StarsBg class="absolute inset-0 opacity-40" />
+      <StarsBg class="absolute inset-0 opacity-10 dark:opacity-40" />
     </div>
 
     <UContainer class="relative z-10 w-full pt-32 pb-24 text-center">
@@ -30,13 +30,13 @@ useSeoMeta({
         </UBadge>
         
         <!-- Judul Hero -->
-        <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-white mb-8 leading-[1.1] drop-shadow-sm">
+        <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-gray-900 dark:text-white mb-8 leading-[1.1] drop-shadow-sm">
           Kurikulum Berbasis <br class="hidden sm:block" />
-          <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-primary-600">Industri & Karakter</span>
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-500 to-primary-700 dark:from-primary-400 dark:to-primary-600">Industri & Karakter</span>
         </h1>
         
         <!-- Deskripsi -->
-        <p class="text-lg md:text-xl text-slate-300 mb-10 leading-relaxed max-w-2xl mx-auto font-light">
+        <p class="text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-10 leading-relaxed max-w-2xl mx-auto font-light">
           Mempersiapkan generasi unggul yang tidak hanya kompeten di bidang teknologi, 
           tetapi juga memiliki pondasi akhlak yang kuat menghadapi tantangan global.
         </p>
@@ -54,10 +54,10 @@ useSeoMeta({
           </UButton>
           <UButton 
             size="xl" 
-            color="white" 
+            color="neutral" 
             variant="ghost" 
             icon="i-lucide-download"
-            class="w-full sm:w-auto font-medium hover:bg-white/5 text-slate-300 hover:text-white"
+            class="w-full sm:w-auto font-medium hover:bg-gray-100 dark:hover:bg-white/5 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
           >
             Unduh Silabus
           </UButton>

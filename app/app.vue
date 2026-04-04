@@ -30,6 +30,7 @@ const { data: navigation } = await useAsyncData('navigation', () => queryCollect
 const { data: files } = useLazyAsyncData('search', () => queryCollectionSearchSections('docs'), {
   server: false
 })
+const isSearchOpen = useState('search-open', () => false)
 
 const links = [{
   label: 'Docs',
@@ -61,12 +62,11 @@ provide('navigation', navigation)
     </NuxtLayout>
 
     <ClientOnly>
-      <LazyUContentSearch
-        :files="files"
-        shortcut="meta_k"
-        :navigation="navigation"
+      <AppSearch 
+        v-model:open="isSearchOpen" 
+        :files="files || []" 
+        :navigation="navigation || []"
         :links="links"
-        :fuse="{ resultLimit: 42 }"
       />
     </ClientOnly>
   </UApp>
