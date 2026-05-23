@@ -6,7 +6,7 @@ useSeoMeta({
   description: 'Informasi lengkap mengenai kurikulum unggulan yang diterapkan di SMK Assalaam Bandung. Mengintegrasikan teknologi mutakhir dan pendidikan karakter Islami.',
   ogTitle: 'Kurikulum Akademik - SMK Assalaam Bandung',
   ogDescription: 'Pelajari kurikulum unggulan SMK Assalaam Bandung yang dirancang sesuai dengan standar industri terkini dan nilai-nilai Islami.',
-  ogImage: '/assalaam.svg',
+  ogImage: '/rakitweb.jpeg',
   twitterCard: 'summary_large_image',
   robots: 'index, follow' // Membantu bot mendeteksi dan mengindeks
 })

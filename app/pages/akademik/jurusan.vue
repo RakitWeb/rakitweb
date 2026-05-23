@@ -9,7 +9,7 @@ useSeoMeta({
   description: 'Tiga program keahlian unggulan SMK Assalaam Bandung — RPL, TSM, TKR. Kurikulum berbasis industri, fasilitas berstandar global.',
   ogTitle: 'Program Keahlian — SMK Assalaam Bandung',
   ogDescription: 'Temukan potensimu di program keahlian yang dirancang bersama industri.',
-  ogImage: '/assalaam.svg',
+  ogImage: '/rakitweb.jpeg',
   twitterCard: 'summary_large_image',
   robots: 'index, follow'
 })

@@ -13,12 +13,15 @@ defineProps({
     required: true
   }
 })
+
+// nuxt-og-image renders server-side via Satori — gunakan URL absolut
+const logoUrl = 'https://rakitweb.id/rakitweb.jpeg'
 </script>
 
 <template>
   <div class="w-full h-full flex flex-col justify-center text-center bg-slate-900 p-8">
     <div class="relative flex flex-col items-center">
-      <img src="/assalaam.svg" class="w-32 h-auto mb-8" alt="Logo">
+      <img :src="logoUrl" width="128" height="128" style="border-radius:12px;margin-bottom:32px;" alt="RakitWeb">
       <h1 class="text-8xl mb-4 text-white">
         {{ title }}
       </h1>
