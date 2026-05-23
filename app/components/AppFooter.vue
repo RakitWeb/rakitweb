@@ -3,47 +3,48 @@ import gsap from 'gsap'
 
 const columns = [
   {
-    label: 'Keahlian',
-    children: [
-      { label: 'Software Engineering' },
-      { label: 'Automotive TKRO' },
-      { label: 'Automotive TBSM' }
-    ]
-  },
-  {
     label: 'Layanan',
     children: [
-      { label: 'PPDB Online' },
-      { label: 'BKK Assalaam' },
-      { label: 'Alumni Hub' },
-      { label: 'Sertifikasi' }
+      { label: 'Website Company Profile' },
+      { label: 'Landing Page' },
+      { label: 'Toko Online' },
+      { label: 'SEO Optimization' }
     ]
   },
   {
-    label: 'Informasi',
+    label: 'Server & Hosting',
     children: [
-      { label: 'Berita Sekolah' },
-      { label: 'Pengumuman' },
-      { label: 'Agenda Acara' },
-      { label: 'Artikel Blog' }
+      { label: 'Setup Hosting & Domain' },
+      { label: 'Game Server' },
+      { label: 'Instalasi Panel' },
+      { label: 'Maintenance & Support' }
     ]
   },
   {
-    label: 'Partner',
+    label: 'Perusahaan',
     children: [
-      { label: 'PT. Telkom' },
-      { label: 'PT. Astra Honda' },
-      { label: 'PT. Toyota Motor' },
-      { label: 'See All' }
+      { label: 'Tentang Kami' },
+      { label: 'Portofolio' },
+      { label: 'Blog & Info' },
+      { label: 'Kontak' }
+    ]
+  },
+  {
+    label: 'Legal',
+    children: [
+      { label: 'Kebijakan Privasi' },
+      { label: 'Syarat & Ketentuan' },
+      { label: 'FAQ' },
+      { label: 'Dukungan' }
     ]
   }
 ]
 
 const socialLinks = [
-  { icon: 'i-simple-icons-github', to: 'https://github.com/smkassalaam', label: 'GitHub' },
-  { icon: 'i-simple-icons-x', to: 'https://x.com/smkassalaam', label: 'X' },
-  { icon: 'i-simple-icons-youtube', to: 'https://youtube.com/@smkassalaam', label: 'YouTube' },
-  { icon: 'i-simple-icons-instagram', to: 'https://instagram.com/smkassalaam', label: 'Instagram' }
+  { icon: 'i-simple-icons-github', to: 'https://github.com/RakitWeb', label: 'GitHub' },
+  { icon: 'i-simple-icons-instagram', to: 'https://www.instagram.com/rakitweb_id', label: 'Instagram' },
+  { icon: 'i-simple-icons-whatsapp', to: 'https://wa.me/6283160325595', label: 'WhatsApp' },
+  { icon: 'i-simple-icons-tiktok', to: 'https://www.tiktok.com/@webcraftidng', label: 'TikTok' }
 ]
 
 // Elite Magnetic Link Effect
@@ -163,11 +164,11 @@ const onGiantMove = (e: MouseEvent) => {
         <!-- BRANDING SIDE -->
         <div class="lg:col-span-4 space-y-8">
           <div class="flex items-center gap-2">
-            <img src="/company/assalaam.png" class="h-10 w-auto" alt="Assalaam Logo">
+            <span class="text-2xl font-black tracking-tight text-gray-900 dark:text-white">Rakit<span class="text-primary-500">Web</span></span>
           </div>
           
           <p class="text-[10px] md:text-[11px] font-black uppercase tracking-[0.3em] text-primary-500 leading-loose max-w-[280px] opacity-70">
-            SMK Assalaam is the most productive way to build, learn, and innovate for the industry.
+            Solusi digital terbaik untuk bisnis masa depan — website, hosting, android & game server.
           </p>
 
           <div class="flex items-center gap-8">
@@ -215,10 +216,10 @@ const onGiantMove = (e: MouseEvent) => {
 
       </div>
 
-      <!-- GIANT BRANDING TEXT (More subtle) -->
-      <div class="giant-branding relative mt-24 select-none pointer-events-none opacity-[0.05] dark:opacity-[0.02]">
-        <h1 class="text-[clamp(80px,25vw,400px)] font-[1000] leading-none tracking-[-0.08em] uppercase text-primary-500 dark:text-white whitespace-nowrap -mb-[0.2em] transform-gpu">
-          Assalaam
+      <!-- GIANT BRANDING TEXT -->
+      <div class="giant-branding relative mt-24 select-none pointer-events-none">
+        <h1 class="text-[clamp(80px,25vw,400px)] font-[1000] leading-none tracking-[-0.08em] uppercase whitespace-nowrap -mb-[0.2em] transform-gpu">
+          <span class="text-gray-900 dark:text-white">Rakit</span><span class="text-primary-500">Web</span>
         </h1>
       </div>
     </UContainer>

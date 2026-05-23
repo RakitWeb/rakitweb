@@ -1,82 +1,83 @@
-title: A plan for every need
-description: Our plans are designed to meet the requirements of both beginners and players. Get the right plan that suits you.
+title: Paket Harga RakitWeb
+description: Pilih paket yang sesuai kebutuhan bisnis Anda. Harga transparan, tanpa biaya tersembunyi.
 seo:
-  title: Pricing
-  description: Choose the plan that's right for you.
+  title: Harga Layanan - RakitWeb
+  description: Lihat paket harga jasa website, hosting, game server, dan aplikasi Android dari RakitWeb.
 navigation.icon: i-lucide-credit-card
 plans:
-  - title: Basic
-    description: A basic plan for individuals.
+  - title: Website Starter
+    description: Cocok untuk UMKM dan personal branding yang ingin hadir di internet.
     price:
-      month: $9.9
-      year: $99.9
+      month: Rp350rb
+      year: Rp750rb
     button:
-      label: Get Started
+      label: Konsultasi Sekarang
       color: neutral
       variant: subtle
     features:
-      - 1 GB Storage
-      - 1 Email Account
-      - 1 Domain
-      - 1 Website
-      - 1 Database
-      - 1 SSL Certificate
-      - 1 Support Ticket
-  - title: Standard
-    description: A standard plan for small teams.
+      - 5-10 Halaman Website
+      - Desain Responsif (Mobile-Friendly)
+      - Hosting & Domain Included
+      - SEO Dasar
+      - 1 Bulan Support
+      - Gratis Revisi 2x
+      - Selesai dalam 7-14 Hari
+  - title: Website Pro
+    description: Untuk bisnis yang butuh website profesional dengan fitur lengkap.
     price:
-      month: $19.9
-      year: $199.9
+      month: Rp1,5jt
+      year: Rp4jt
     highlight: true
     scale: true
     button:
-      label: Get Started
+      label: Mulai Sekarang
     features:
-      - 10 GB Storage
-      - 10 Email Accounts
-      - 10 Domains
-      - 10 Websites
-      - 10 Databases
-      - 10 SSL Certificates
-      - 10 Support Tickets
-  - title: Premium
-    description: A premium plan for large teams.
+      - Halaman Tidak Terbatas
+      - Custom Design & Branding
+      - SEO Optimization Lanjutan
+      - Maintenance 3 Bulan
+      - Toko Online (Opsional)
+      - Integrasi WhatsApp & Maps
+      - Priority Support
+      - Selesai dalam 14-30 Hari
+  - title: Hosting & Domain
+    description: Setup hosting, koneksi domain, dan migrasi website.
     price:
-      month: $29.9
-      year: $299.9
+      month: Rp150rb
+      year: Rp300rb
     button:
-      label: Get Started
+      label: Konsultasi Sekarang
       color: neutral
       variant: subtle
     features:
-      - 100 GB Storage
-      - 100 Email Accounts
-      - 100 Domains
-      - 100 Websites
-      - 100 Databases
-      - 100 SSL Certificates
-      - 100 Support Tickets
+      - Setup Hosting Baru
+      - Koneksi & Konfigurasi Domain
+      - Migrasi Website Existing
+      - Instalasi Panel (cPanel/HestiaCP)
+      - SSL Certificate
+      - Backup & Restore
+      - Support Teknis
 logos:
-  title: Trusted by the world's best
+  title: Teknologi yang Kami Gunakan
   icons:
-    - i-simple-icons-amazonaws
-    - i-simple-icons-heroku
-    - i-simple-icons-netlify
-    - i-simple-icons-vercel
+    - i-simple-icons-vuedotjs
+    - i-simple-icons-nuxtdotjs
+    - i-simple-icons-nestjs
+    - i-simple-icons-nextdotjs
     - i-simple-icons-cloudflare
 faq:
-  title: Frequently asked questions
-  description: Culpa consectetur dolor pariatur commodo aliqua amet tempor nisi enim deserunt elit cillum.
+  title: Pertanyaan yang Sering Diajukan
+  description: Punya pertanyaan? Kami siap membantu. Hubungi kami via WhatsApp jika tidak ada di sini.
   items:
-    - label: Is this a secure service?
-      content: Qui sunt nostrud aliquip reprehenderit enim proident veniam magna aliquip velit occaecat eiusmod nisi deserunt sunt.
-    - label: How can I cancel my subscription?
-      content: Consectetur irure Lorem nostrud adipisicing aliqua mollit Lorem sit officia magna eiusmod cupidatat.
-    - label: How does the free trial work?
-      content: Quis officia commodo magna eu qui aliquip duis.
-    - label: Can I switch plans later?
-      content: Dolore irure ullamco dolore eu occaecat magna eiusmod dolor aliqua culpa labore.
-    - label: Do you offer refunds?
-      content: Duis mollit nostrud voluptate mollit Lorem dolore commodo veniam incididunt eiusmod.
-    - label: Do you offer support?
-      content: Aliqua sit nisi consequat pariatur Lorem minim irure qui.
+    - label: Berapa lama waktu pengerjaan website?
+      content: Paket Starter selesai dalam 7-14 hari kerja, Paket Pro 14-30 hari. Waktu bisa lebih cepat tergantung kesiapan konten dari klien.
+    - label: Apakah website sudah responsif di HP dan tablet?
+      content: Ya, semua website yang kami buat sudah 100% responsif dan dioptimalkan untuk tampil sempurna di semua ukuran layar.
+    - label: Apakah ada garansi setelah website selesai?
+      content: Ya! Paket Starter mendapat 1 bulan support gratis, Paket Pro mendapat 3 bulan maintenance. Bug dan error kami perbaiki tanpa biaya tambahan.
+    - label: Berapa biaya pembuatan website?
+      content: Paket Starter mulai Rp350.000 sekali bayar (5-10 halaman + hosting + domain). Paket Pro mulai Rp1.500.000 dengan fitur lengkap. Konsultasi gratis untuk custom project.
+    - label: Apakah bisa revisi desain?
+      content: Tentu! Paket Starter sudah termasuk 2x revisi gratis. Paket Pro revisi tidak terbatas selama masa pengerjaan.
+    - label: Apakah sudah termasuk domain bisnis (.com, .id) dan server?
+      content: Paket Starter dan Pro sudah termasuk hosting dan domain selama 1 tahun. Untuk Paket Hosting & Domain, kami bantu setup di hosting pilihan Anda.

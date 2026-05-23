@@ -133,8 +133,8 @@ onMounted(async () => {
       </svg>
 
       <!-- Decorative Edge Numbers/Labels -->
-      <div class="absolute top-10 left-10 text-[9px] font-mono font-black uppercase tracking-[0.5em] text-gray-300 dark:text-gray-700 writing-vertical-rl">SIM_ECO_V4.2</div>
-      <div class="absolute bottom-10 right-10 text-[9px] font-mono font-black uppercase tracking-[0.5em] text-gray-300 dark:text-gray-700">00 &mdash; 03 // 2026</div>
+      <div class="absolute top-10 left-10 text-[9px] font-mono font-black uppercase tracking-[0.5em] text-gray-300 dark:text-gray-700 writing-vertical-rl">RAKITWEB_ANDROID_V1</div>
+      <div class="absolute bottom-10 right-10 text-[9px] font-mono font-black uppercase tracking-[0.5em] text-gray-300 dark:text-gray-700">01 — 06 // 2026</div>
       
       <!-- Center Gradient Glow -->
       <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary-500/5 blur-[150px] rounded-full pointer-events-none" />
@@ -148,7 +148,7 @@ onMounted(async () => {
           <div class="space-y-6">
             <div class="text-split flex items-center gap-4">
               <span class="w-12 h-[1px] bg-primary-500" />
-              <span class="text-[10px] font-black uppercase tracking-[0.4em] text-primary-500">Android Application</span>
+              <span class="text-[10px] font-black uppercase tracking-[0.4em] text-primary-500">Jasa Aplikasi Android</span>
             </div>
             
             <h2 
@@ -158,25 +158,25 @@ onMounted(async () => {
               @mouseleave="onHeaderLeave"
             >
               <div class="flex flex-wrap">
-                <span v-for="(char, i) in 'Kendali Akademik'.split('')" :key="'w1-'+i" class="char inline-block min-w-[0.1em]" :class="char === ' ' ? 'mr-4' : ''">{{ char }}</span>
+                <span v-for="(char, i) in 'Aplikasi Android'.split('')" :key="'w1-'+i" class="char inline-block min-w-[0.1em]" :class="char === ' ' ? 'mr-4' : ''">{{ char }}</span>
               </div>
               <div class="flex flex-wrap">
-                <span v-for="(char, i) in 'Inklusif & Dinamis.'.split('')" :key="'w2-'+i" class="char inline-block min-w-[0.1em]" :class="char === ' ' ? 'mr-4' : ''">{{ char }}</span>
+                <span v-for="(char, i) in 'Custom & Profesional.'.split('')" :key="'w2-'+i" class="char inline-block min-w-[0.1em]" :class="char === ' ' ? 'mr-4' : ''">{{ char }}</span>
               </div>
             </h2>
             
             <p class="text-split text-base md:text-lg text-gray-500 dark:text-gray-400 max-w-lg leading-relaxed font-medium opacity-80">
-              Transformasi pengelolaan data siswa dalam satu ekosistem native. SIM Assalaam menghapus batasan waktu dan ruang dalam pemantauan progres pendidikan.
+              Butuh aplikasi Android untuk bisnis Anda? RakitWeb mengerjakan custom app sesuai kebutuhan — dari konsep hingga publish di Play Store, dengan harga terjangkau.
             </p>
           </div>
 
           <!-- Technical Specs Grid -->
           <div class="text-split grid grid-cols-2 gap-8 items-start max-w-md">
             <div v-for="(spec, idx) in [
-              { label: 'Real-Time Sync', desc: 'Auto-update data per detik' },
-              { label: 'Push Alert', desc: 'Notifikasi presensi instan' },
-              { label: 'E-Wallet', desc: 'Sistem pembayaran terintegrasi' },
-              { label: 'Data Hub', desc: 'Pusat unduhan materi belajar' }
+              { label: 'Custom Design', desc: 'UI/UX sesuai branding Anda' },
+              { label: 'API Integration', desc: 'Terhubung ke sistem Anda' },
+              { label: 'Push Notifikasi', desc: 'Update real-time ke pengguna' },
+              { label: 'Play Store Ready', desc: 'Siap publish & distribusi' }
             ]" :key="idx" class="space-y-1">
               <h4 class="text-[10px] font-black text-primary-500 uppercase tracking-widest">{{ spec.label }}</h4>
               <p class="text-xs text-gray-400 font-bold uppercase tracking-wider">{{ spec.desc }}</p>
@@ -185,14 +185,15 @@ onMounted(async () => {
 
           <div class="text-split pt-4">
             <NuxtLink 
-              to="https://play.google.com/store/apps/details?id=com.sim.app.yayasan" 
+              to="https://wa.me/6285187153883?text=Halo%20RakitWeb%2C%20saya%20ingin%20konsultasi%20pembuatan%20aplikasi%20Android" 
+              target="_blank"
               class="group relative inline-flex items-center gap-5 px-10 py-5 bg-gray-950 dark:bg-white text-white dark:text-gray-950 rounded-[20px] transition-all hover:shadow-[0_20px_50px_rgba(0,193,106,0.2)] active:scale-95 overflow-hidden"
             >
               <div class="absolute inset-0 bg-primary-500/10 -translate-x-full group-hover:translate-x-0 transition-transform duration-500" />
-              <UIcon name="i-simple-icons-googleplay" class="w-6 h-6 relative z-10" />
+              <UIcon name="i-lucide-message-circle" class="w-6 h-6 relative z-10" />
               <div class="flex flex-col relative z-10">
-                <span class="text-[9px] font-black uppercase tracking-widest opacity-50">Tersedia di</span>
-                <span class="text-lg font-black leading-none">Google Play Store</span>
+                <span class="text-[9px] font-black uppercase tracking-widest opacity-50">Konsultasi via</span>
+                <span class="text-lg font-black leading-none">WhatsApp Sekarang</span>
               </div>
             </NuxtLink>
           </div>
@@ -208,7 +209,7 @@ onMounted(async () => {
                 
                 <!-- Internal App Screenshot -->
                 <img 
-                  src="https://play-lh.googleusercontent.com/Au-kjq3PniwCG8j15-VU0hwoHAX7wJCTw5p3mmXTN5OQSxAqJ1Ydsmt0pW0hUK6L4g=w5120-h2880-rw" 
+                  src="https://bwaplatformbucket.sgp1.cdn.digitaloceanspaces.com/assets/thumbnail_tips/Login.png" 
                   class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
                   alt="SIM Assalaam UI" 
                 />
@@ -221,22 +222,22 @@ onMounted(async () => {
             <!-- FLOATING UI DATA -->
             <div class="ui-card absolute -left-16 top-10 p-5 bg-white/90 dark:bg-[#09090b]/90 backdrop-blur-2xl border border-gray-100 dark:border-white/10 rounded-2xl shadow-2xl w-52 z-20">
               <div class="flex items-center gap-3 mb-3">
-                <UIcon name="i-lucide-activity" class="w-4 h-4 text-primary-500" />
-                <span class="text-[9px] font-black text-gray-400 uppercase tracking-widest">Attendance System</span>
+                <UIcon name="i-lucide-smartphone" class="w-4 h-4 text-primary-500" />
+                <span class="text-[9px] font-black text-gray-400 uppercase tracking-widest">Android App</span>
               </div>
               <div class="space-y-1">
-                <div class="text-sm font-black text-gray-900 dark:text-white leading-none">98.5% Presence</div>
-                <div class="text-[10px] text-primary-500 font-bold uppercase tracking-wider">Status: Excellent</div>
+                <div class="text-sm font-black text-gray-900 dark:text-white leading-none">Custom Build</div>
+                <div class="text-[10px] text-primary-500 font-bold uppercase tracking-wider">Status: Ready</div>
               </div>
             </div>
 
             <div class="ui-card absolute -right-12 bottom-20 p-5 bg-white/90 dark:bg-[#09090b]/90 backdrop-blur-2xl border border-gray-100 dark:border-white/10 rounded-2xl shadow-2xl w-48 z-20">
               <div class="flex items-center gap-3 mb-3">
                 <UIcon name="i-lucide-zap" class="w-4 h-4 text-amber-500" />
-                <span class="text-[9px] font-black text-gray-400 uppercase tracking-widest">Fast Action</span>
+                <span class="text-[9px] font-black text-gray-400 uppercase tracking-widest">Fast Delivery</span>
               </div>
-              <div class="text-sm font-black text-gray-900 dark:text-white leading-none">Bayar SPP</div>
-              <p class="text-[10px] text-gray-500 font-bold uppercase mt-1">One-click payment</p>
+              <div class="text-sm font-black text-gray-900 dark:text-white leading-none">14-30 Hari</div>
+              <p class="text-[10px] text-gray-500 font-bold uppercase mt-1">Siap publish</p>
             </div>
 
           </div>

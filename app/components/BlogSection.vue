@@ -46,9 +46,9 @@ onMounted(async () => {
     <UContainer>
       <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
         <div class="blog-reveal max-w-2xl">
-          <h2 class="text-xs font-bold uppercase tracking-[0.3em] text-amber-500 mb-4">Warta Terkini</h2>
+          <h2 class="text-xs font-bold uppercase tracking-[0.3em] text-amber-500 mb-4">Artikel Terkini</h2>
           <h3 class="text-3xl md:text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white leading-tight">
-            Berita & Artikel Kampus <br class="hidden md:block"/> SMK Assalaam.
+            Berita & Artikel <br class="hidden md:block"/> Seputar Dunia Web
           </h3>
         </div>
         
@@ -60,7 +60,7 @@ onMounted(async () => {
             trailing-icon="i-lucide-arrow-right"
             class="font-bold hover:text-amber-500 transition-colors"
           >
-            Lihat Semua Berita
+            Lihat Semua Artikel
           </UButton>
         </div>
       </div>

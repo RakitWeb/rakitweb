@@ -10,48 +10,49 @@ const sectionRef = ref<HTMLElement | null>(null)
 
 const testimonials = [
   { 
-    name: "Ari Ardiansyah, S.Kom", role: "Senior Programmer PT Digital Amore Kriyanesia", 
-    content: "Saya alumni RPL 2018. Alhamdulillah, berkat ilmu dan pembiasaan kerja tim di SMK Assalaam, sekarang saya dipercaya menjadi Project Lead di PT DAK.", 
-    avatar: "https://smkassalaambandung.sch.id/storage/testimoni/01KGP6T9ZTK7K5DMVGNXB4TND8.jpg", 
-    isDark: true, logo: "i-lucide-code" 
+    name: "Budi Santoso", role: "Owner Toko Elektronik, Semarang", 
+    content: "Kami order website toko online ke RakitWeb, hasilnya luar biasa! Modern, cepat, dan pelanggan kami jadi lebih mudah order. Harga juga sangat terjangkau.", 
+    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Budi", 
+    isDark: true, logo: "i-lucide-globe" 
   },
   { 
-    name: "Jafar Sidik", role: "Mekanik Toyota PT. WIJAYA LESTARI DAGO", 
-    content: "SMK Assalaam memberikan ilmu akademis, keterampilan, dan akhlak yang sangat bermanfaat bagi karir saya di dunia otomotif.", 
-    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Jafar", 
+    name: "Rina Wulandari", role: "Pemilik UMKM Fashion, Semarang", 
+    content: "RakitWeb bantu setup toko online kami dari nol. Sekarang omzet naik karena pelanggan bisa order online 24 jam. Tim-nya ramah dan responsif.", 
+    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Rina", 
     isDark: false 
   },
   { 
-    name: "Eko Budi Prasetyo", role: "Mekanik Mitsubishi PT. SRIKANDI DIAMON MOTORS", 
-    content: "Praktek bidang keahlian lebih lama, ilmu dan keterampilan yang diberikan sangat terpakai sekali dalam dunia industri global.", 
-    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Eko", 
+    name: "Agus Prasetyo", role: "Owner Server Minecraft Indonesia", 
+    content: "Game server Minecraft kami di-setup sama RakitWeb, performanya stabil banget! Maintenance juga full, jadi kami tinggal main aja.", 
+    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Agus", 
     isDark: false 
   },
   { 
-    name: "Gunawan Bayu Atmaja, S.Kom", role: "Instytut Lingwistyki Polandia", 
-    content: "Bekal coding, problem solving, dan cara berpikir programmer dari RPL Assalaam masih sangat terpakai di industri IT Polandia.", 
-    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Gunawan", 
+    name: "Dewi Rahayu", role: "Manajer PT Maju Bersama", 
+    content: "Company profile kami dikerjakan profesional dan sesuai brief. Website jadi lebih elegan dan mewakili brand perusahaan kami. Highly recommended!", 
+    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Dewi", 
     isDark: false 
   },
   { 
-    name: "Abdul Sodik Ibnudin", role: "Mekanik Honda PT. AHASS KOPO", 
-    content: "Selain skill, kedisiplinan menjadi poin penting di sekolah ini. Saya terbiasa tepat waktu dalam menyelesaikan tugas sehari-hari.", 
-    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Sodik", 
+    name: "Hendra Kurniawan", role: "Developer Startup Semarang", 
+    content: "Minta bantuan setup server VPS dan instalasi panel Pterodactyl. Dikerjakan cepat, beres dalam 2 jam, dan semuanya berjalan mulus. Top!", 
+    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Hendra", 
     isDark: false 
   },
   { 
-    name: "Agung Kusuma", role: "Mekanik Honda PT. WIJAYA ABADI MOTOR", 
-    content: "SMK ASSALAAM sangat disiplin dan materi yang diajarkannya sangat relevan dengan kebutuhan dunia industri saat ini.", 
-    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Agung", 
+    name: "Sari Indah", role: "Pemilik Klinik Kecantikan, Semarang", 
+    content: "Landing page kami dibuat menarik dan konversinya tinggi. Banyak pelanggan baru yang datang dari hasil promosi pakai landing page RakitWeb.", 
+    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Sari", 
     isDark: false 
   },
   { 
-    name: "Hasan Muhammad Sholeh", role: "Programmer PT. Citra Jelajah Informatika", 
-    content: "Di sini saya diajarkan 'bagaimana' langsung lewat praktik di lab lengkap. Saya jauh lebih percaya diri terjun ke industri IT.", 
-    avatar: "https://smkassalaambandung.sch.id/storage/testimoni/01KGP6G90HB54XM1PR83FYCW57.jpeg", 
-    isDark: true, logo: "i-lucide-cpu" 
+    name: "Rizky Firmansyah", role: "Admin Server CS:GO Community", 
+    content: "Server CS:GO kami di-handle penuh sama RakitWeb. Dari setup sampai maintenance, semua beres. Owner tinggal fokus komunitas, server aman.", 
+    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Rizky", 
+    isDark: true, logo: "i-lucide-server" 
   }
 ]
+
 
 // Advanced 3D Hover System with Spotlight Border
 const onMouseMove = (e: MouseEvent, el: HTMLElement) => {

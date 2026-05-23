@@ -1,0 +1,35 @@
+# RakitWeb - robots.txt
+
+User-agent: *
+Allow: /
+
+# Blokir crawler fingerprint & tech-detection bots
+User-agent: Wappalyzer
+Disallow: /
+
+User-agent: BuiltWith
+Disallow: /
+
+User-agent: WhatCMS
+Disallow: /
+
+User-agent: SimilarTech
+Disallow: /
+
+User-agent: Netcraft
+Disallow: /
+
+User-agent: W3Techs
+Disallow: /
+
+User-agent: TechnographyScraper
+Disallow: /
+
+# Izinkan Google & Bing normal
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+Sitemap: https://rakitweb.id/sitemap.xml

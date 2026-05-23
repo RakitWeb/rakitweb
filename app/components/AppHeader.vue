@@ -2,32 +2,34 @@
 import gsap from 'gsap'
 
 // ── Navigation Data ─────────────────────────────────
-const akademikLinks = [
-  { icon: 'i-lucide-graduation-cap', label: 'Program Keahlian', desc: 'RPL, TSM, dan TKR unggulan.', to: '/akademik/jurusan' },
-  { icon: 'i-lucide-book-open', label: 'Kurikulum Industri', desc: 'Standar industri & sertifikasi.', to: '/akademik/kurikulum' },
-  { icon: 'i-lucide-monitor', label: 'Fasilitas', desc: 'Lab komputer & bengkel modern.', to: '/akademik/fasilitas' },
-  { icon: 'i-lucide-award', label: 'Prestasi', desc: 'Pencapaian siswa & sekolah.', to: '/akademik/prestasi' }
+const layananLinks = [
+  { icon: 'i-lucide-globe', label: 'Jasa Pembuatan Website', desc: 'Company profile, landing page, toko online.', to: '/#layanan' },
+  { icon: 'i-lucide-server', label: 'Hosting & Domain Setup', desc: 'Setup, migrasi, dan konfigurasi server.', to: '/#layanan' },
+  { icon: 'i-lucide-smartphone', label: 'Aplikasi Android', desc: 'Pembuatan aplikasi Android custom.', to: '/#layanan' },
+  { icon: 'i-lucide-gamepad-2', label: 'Game Server', desc: 'Minecraft, CS:GO, GTA, dan lainnya.', to: '/#layanan' },
+  { icon: 'i-lucide-layout-panel-left', label: 'Instalasi Panel', desc: 'Pterodactyl, cPanel, HestiaCP, dll.', to: '/#layanan' },
+  { icon: 'i-lucide-search', label: 'SEO Optimization', desc: 'Tingkatkan visibilitas website Anda.', to: '/#layanan' }
 ]
 
-const kesiswaanLinks = [
-  { icon: 'i-lucide-users', label: 'OSIS & MPK', desc: 'Organisasi kepemimpinan siswa.', to: 'https://osis.smkassalaambandung.sch.id' },
-  { icon: 'i-lucide-trophy', label: 'Ekstrakurikuler', desc: 'Pengembangan minat & bakat.', to: '/kesiswaan/ekskul' },
-  { icon: 'i-lucide-briefcase', label: 'Bursa Kerja', desc: 'Penempatan kerja industri.', to: '/kesiswaan/bkk' },
-  { icon: 'i-lucide-heart', label: 'Bimbingan Konseling', desc: 'Pendampingan siswa.', to: '/kesiswaan/bk' }
+const paketLinks = [
+  { icon: 'i-lucide-rocket', label: 'Paket Website Starter', desc: '5-10 halaman + hosting + domain, Rp350rb-750rb.', to: '/pricing' },
+  { icon: 'i-lucide-star', label: 'Paket Website Pro', desc: 'Custom + SEO + maintenance 3 bulan, Rp1,5jt-4jt.', to: '/pricing' },
+  { icon: 'i-lucide-server', label: 'Paket Game Server', desc: 'Panel + config + maintenance, Rp200rb-800rb/bulan.', to: '/pricing' },
+  { icon: 'i-lucide-smartphone', label: 'Paket Android', desc: 'Custom quote, custom price.', to: '/pricing' }
 ]
 
 const upcomingEvents = [
-  { day: '7', month: 'APR', title: 'Rapat Pleno Kelulusan', location: 'Jl. Situtarate No. 38, Bandung' },
-  { day: '14', month: 'APR', title: 'UKK Jurusan RPL & TKJ', location: 'Lab Komputer SMK Assalaam' },
-  { day: '16', month: 'APR', title: 'Halal bi Halal Syawal', location: 'Online' },
-  { day: '22', month: 'APR', title: 'Industrial Visit Toyota', location: 'PT. Toyota Motor Mfg, Karawang' },
-  { day: '23', month: 'APR', title: 'Seminar Teknologi AI', location: 'Aula SMK Assalaam, Bandung' }
+  { day: '01', month: 'JUN', title: 'Promo Website Starter', location: 'Mulai Rp350.000 sekali bayar' },
+  { day: '15', month: 'JUN', title: 'Diskon Setup Hosting', location: 'Setup + migrasi mulai Rp150.000' },
+  { day: '20', month: 'JUN', title: 'Konsultasi Gratis', location: 'Via WhatsApp kapan saja' },
+  { day: '01', month: 'JUL', title: 'Paket Game Server Baru', location: 'Minecraft, CS:GO, GTA & lebih' },
+  { day: '10', month: 'JUL', title: 'Workshop Web Development', location: 'Online — Semarang, Indonesia' }
 ]
 
 const featuredEvents = [
-  { title: 'Assalaam\nDigital Expo', dateMonth: 'MAY', dateRange: '26-27', year: '2026', city: 'BANDUNG', country: 'ID', img: 'https://picsum.photos/seed/city1/400/560' },
-  { title: 'WORKSHOP\nINDUSTRI', dateMonth: 'JUN', dateRange: '18-19', year: '2026', city: 'JAKARTA', country: 'ID', img: 'https://picsum.photos/seed/city2/400/560' },
-  { title: 'GRADUATION\nDAY', dateMonth: 'JUL', dateRange: '28-29', year: '2026', city: 'BANDUNG', country: 'ID', img: 'https://picsum.photos/seed/city3/400/560' }
+  { title: 'Website\nStarter', dateMonth: 'JUN', dateRange: '350rb', year: '2026', city: 'SEMARANG', country: 'ID', img: 'https://jurnal.mifandimandiri.com/public/journals/17/submission_149_149_coverImage_en_US.png' },
+  { title: 'GAME\nSERVER', dateMonth: 'JUN', dateRange: '200rb', year: '2026', city: 'CLOUD', country: 'ID', img: 'https://cdn-dynmedia-1.microsoft.com/is/image/microsoftassets/minecraft-tiny-takeover-thumbnail' },
+  { title: 'ANDROID\nAPP', dateMonth: 'JUL', dateRange: 'Custom', year: '2026', city: 'SEMARANG', country: 'ID', img: 'https://bwaplatformbucket.sgp1.cdn.digitaloceanspaces.com/assets/thumbnail_tips/Login.png' }
 ]
 
 // ── State ───────────────────────────────────────────
@@ -143,13 +145,13 @@ onUnmounted(() => {
     ref="headerEl"
     class="sticky top-0 z-50 w-full border-b border-zinc-200 dark:border-zinc-800/50 bg-white dark:bg-[#09090b] backdrop-blur-none"
   >
-    <div class="max-w-7xl mx-auto border-x border-white/20 bg-[#ef4444] text-white py-1.5 px-5 sm:px-6 flex items-center justify-between text-[10px] font-bold tracking-tight">
+    <div class="max-w-7xl mx-auto border-x border-white/20 bg-[#10b981] text-white py-1.5 px-5 sm:px-6 flex items-center justify-between text-[10px] font-bold tracking-tight">
        <div class="flex items-center gap-1.5">
-          <UIcon name="i-lucide-alert-triangle" class="w-3 h-3" />
-          <span>Situs ini bukan resmi SMK Assalaam, redisain by <NuxtLink to="http://davingm.com" target="_blank" class="underline decoration-white/30 underline-offset-2 hover:decoration-white transition-all">@davingm</NuxtLink></span>
+          <UIcon name="i-lucide-zap" class="w-3 h-3" />
+          <span>Konsultasi gratis via WhatsApp — Hubungi kami sekarang!</span>
        </div>
-       <NuxtLink to="https://smkassalaambandung.sch.id/" target="_blank" class="flex items-center gap-1 uppercase tracking-widest text-[9px] hover:opacity-80 transition-opacity">
-          Situs Resmi <UIcon name="i-lucide-external-link" class="w-3 h-3" />
+       <NuxtLink to="https://wa.me/6283160325595" target="_blank" class="flex items-center gap-1 uppercase tracking-widest text-[9px] hover:opacity-80 transition-opacity">
+          Chat Sekarang <UIcon name="i-lucide-external-link" class="w-3 h-3" />
        </NuxtLink>
     </div>
 
@@ -166,23 +168,30 @@ onUnmounted(() => {
           @mouseleave="scheduleClose"
         >
           <button
-            v-for="menu in ['Akademik', 'Kesiswaan', 'Berita & Event']"
+            v-for="menu in ['Layanan', 'Paket Harga', 'Tentang & Kontak']"
             :key="menu"
             class="nav-enter relative text-[13px] font-medium px-3.5 h-14 flex items-center gap-1 transition-colors duration-200"
-            :class="activeMenu === menu.toLowerCase().replace(/ & /g, '-') ? 'text-foreground' : 'text-muted-foreground hover:text-foreground'"
-            @mouseenter="openMenu(menu.toLowerCase().replace(/ & /g, '-'))"
+            :class="activeMenu === menu.toLowerCase().replace(/ & /g, '-').replace(/ /g, '-') ? 'text-foreground' : 'text-muted-foreground hover:text-foreground'"
+            @mouseenter="openMenu(menu.toLowerCase().replace(/ & /g, '-').replace(/ /g, '-'))"
           >
             {{ menu }}
             <UIcon name="i-lucide-chevron-down" class="w-3 h-3 opacity-50" />
           </button>
 
           <NuxtLink
-            to="https://ppdb.smkassalaambandung.sch.id/"
+            to="https://wa.me/6283160325595"
             target="_blank"
             class="nav-enter text-[13px] font-medium px-3.5 h-14 flex items-center text-muted-foreground hover:text-foreground transition-colors"
             @mouseenter="scheduleClose"
           >
-            PPDB
+            WhatsApp
+          </NuxtLink>
+          <NuxtLink
+            to="/team"
+            class="nav-enter text-[13px] font-medium px-3.5 h-14 flex items-center text-muted-foreground hover:text-foreground transition-colors"
+            @mouseenter="scheduleClose"
+          >
+            Tim
           </NuxtLink>
         </nav>
 
@@ -220,11 +229,11 @@ onUnmounted(() => {
     >
       <div class="max-w-7xl mx-auto border-x border-zinc-200/80 dark:border-zinc-800">
 
-        <!-- ▸ Akademik Panel -->
-        <div v-if="activeMenu === 'akademik'" class="p-6 sm:p-8">
-          <div class="grid grid-cols-4 gap-3">
+        <!-- ▸ Layanan Panel -->
+        <div v-if="activeMenu === 'layanan'" class="p-6 sm:p-8">
+          <div class="grid grid-cols-3 gap-3">
             <NuxtLink
-              v-for="item in akademikLinks"
+              v-for="item in layananLinks"
               :key="item.label"
               :to="item.to"
               class="dd-animate group flex items-start gap-3 p-4 rounded-xl border border-transparent hover:border-border/50 hover:bg-muted/40 transition-all duration-200"
@@ -240,11 +249,11 @@ onUnmounted(() => {
           </div>
         </div>
 
-        <!-- ▸ Kesiswaan Panel -->
-        <div v-else-if="activeMenu === 'kesiswaan'" class="p-6 sm:p-8">
+        <!-- ▸ Paket Harga Panel -->
+        <div v-else-if="activeMenu === 'paket-harga'" class="p-6 sm:p-8">
           <div class="grid grid-cols-4 gap-3">
             <NuxtLink
-              v-for="item in kesiswaanLinks"
+              v-for="item in paketLinks"
               :key="item.label"
               :to="item.to"
               class="dd-animate group flex items-start gap-3 p-4 rounded-xl border border-transparent hover:border-border/50 hover:bg-muted/40 transition-all duration-200"
@@ -260,11 +269,11 @@ onUnmounted(() => {
           </div>
         </div>
 
-        <!-- ▸ Berita & Event Panel (Megamenu) -->
-        <div v-else-if="activeMenu === 'berita-event'" class="flex">
+        <!-- ▸ Tentang & Kontak Panel (Megamenu) -->
+        <div v-else-if="activeMenu === 'tentang-kontak'" class="flex">
           <!-- Left: Event List -->
           <div class="w-[300px] shrink-0 p-6 sm:p-8 border-r border-border/30">
-            <h3 class="dd-animate text-[13px] font-semibold text-primary mb-5">Upcoming events</h3>
+            <h3 class="dd-animate text-[13px] font-semibold text-primary mb-5">Promo & Info Terbaru</h3>
             <div class="space-y-1">
               <div
                 v-for="evt in upcomingEvents"
@@ -282,7 +291,7 @@ onUnmounted(() => {
               </div>
             </div>
             <NuxtLink to="/blog" class="dd-animate inline-flex items-center gap-1 text-[13px] font-semibold text-primary mt-5 hover:gap-2 transition-all">
-              View all <UIcon name="i-lucide-arrow-right" class="w-3.5 h-3.5" />
+              Lihat semua <UIcon name="i-lucide-arrow-right" class="w-3.5 h-3.5" />
             </NuxtLink>
           </div>
 
@@ -359,22 +368,22 @@ onUnmounted(() => {
         <!-- Nav Items -->
         <div class="flex-1 overflow-y-auto px-5 py-3">
 
-          <!-- Akademik (Accordion) -->
+          <!-- Layanan (Accordion) -->
           <div class="mob-item border-b border-border/30">
             <button
               class="w-full flex items-center justify-between py-3.5 text-sm font-semibold text-foreground"
-              @click="toggleMobileSection('akademik')"
+              @click="toggleMobileSection('layanan')"
             >
-              Akademik
+              Layanan
               <UIcon
                 name="i-lucide-chevron-down"
                 class="w-4 h-4 transition-transform duration-300"
-                :class="expandedMobile === 'akademik' ? 'rotate-180' : ''"
+                :class="expandedMobile === 'layanan' ? 'rotate-180' : ''"
               />
             </button>
-            <div v-show="expandedMobile === 'akademik'" class="pb-3 space-y-1">
+            <div v-show="expandedMobile === 'layanan'" class="pb-3 space-y-1">
               <NuxtLink
-                v-for="item in akademikLinks"
+                v-for="item in layananLinks"
                 :key="item.label"
                 :to="item.to"
                 class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-muted/50 transition-colors"
@@ -391,22 +400,22 @@ onUnmounted(() => {
             </div>
           </div>
 
-          <!-- Kesiswaan (Accordion) -->
+          <!-- Paket Harga (Accordion) -->
           <div class="mob-item border-b border-border/30">
             <button
               class="w-full flex items-center justify-between py-3.5 text-sm font-semibold text-foreground"
-              @click="toggleMobileSection('kesiswaan')"
+              @click="toggleMobileSection('paket')"
             >
-              Kesiswaan
+              Paket Harga
               <UIcon
                 name="i-lucide-chevron-down"
                 class="w-4 h-4 transition-transform duration-300"
-                :class="expandedMobile === 'kesiswaan' ? 'rotate-180' : ''"
+                :class="expandedMobile === 'paket' ? 'rotate-180' : ''"
               />
             </button>
-            <div v-show="expandedMobile === 'kesiswaan'" class="pb-3 space-y-1">
+            <div v-show="expandedMobile === 'paket'" class="pb-3 space-y-1">
               <NuxtLink
-                v-for="item in kesiswaanLinks"
+                v-for="item in paketLinks"
                 :key="item.label"
                 :to="item.to"
                 class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-muted/50 transition-colors"
@@ -425,16 +434,19 @@ onUnmounted(() => {
 
           <!-- Simple Links -->
           <NuxtLink to="/blog" class="mob-item block py-3.5 text-sm font-semibold text-foreground border-b border-border/30" @click="closeMobile">
-            Berita & Event
+            Blog & Info
           </NuxtLink>
-          <NuxtLink to="https://ppdb.smkassalaambandung.sch.id/" target="_blank" class="mob-item block py-3.5 text-sm font-semibold text-primary border-b border-border/30" @click="closeMobile">
-            PPDB →
+          <NuxtLink to="https://wa.me/6283160325595" target="_blank" class="mob-item block py-3.5 text-sm font-semibold text-primary border-b border-border/30" @click="closeMobile">
+            WhatsApp →
+          </NuxtLink>
+          <NuxtLink to="/team" class="mob-item block py-3.5 text-sm font-semibold text-foreground border-b border-border/30" @click="closeMobile">
+            Tim Kami
           </NuxtLink>
         </div>
 
         <!-- Footer -->
         <div class="mob-item px-5 py-4 border-t border-border/40 flex items-center justify-between">
-          <span class="text-xs text-muted-foreground">© SMK Assalaam</span>
+          <span class="text-xs text-muted-foreground">© RakitWeb 2026</span>
           <UColorModeButton size="sm" />
         </div>
       </div>

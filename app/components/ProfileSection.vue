@@ -8,29 +8,29 @@ if (process.client) {
 
 const sectionRef = ref<HTMLElement | null>(null)
 
-// Mengganti fitur umum menjadi Program Keahlian (Jurusan)
+// Layanan Unggulan RakitWeb
 const features = [
   {
-    title: 'Rekayasa Perangkat Lunak (RPL)',
-    desc: 'Fokus pada pengembangan software, aplikasi web, mobile, serta penguasaan bahasa pemrograman modern untuk industri teknologi.',
-    icon: 'i-lucide-code-2'
+    title: 'Jasa Pembuatan Website',
+    desc: 'Website company profile, landing page, toko online, dan personal branding — modern, responsif, dan SEO-friendly dengan harga terjangkau.',
+    icon: 'i-lucide-globe'
   },
   {
-    title: 'Teknik Kendaraan Ringan (TKR)',
-    desc: 'Spesialisasi dalam pemeliharaan dan perbaikan mobil konvensional hingga teknologi EFI, mencetak mekanik profesional.',
-    icon: 'i-lucide-car'
+    title: 'Hosting, Domain & Server',
+    desc: 'Setup hosting, koneksi domain, migrasi website, hingga instalasi panel seperti Pterodactyl, cPanel, HestiaCP, dan CloudPanel.',
+    icon: 'i-lucide-server'
   },
   {
-    title: 'Teknik Sepeda Motor (TSM)',
-    desc: 'Pendalaman teknik otomotif roda dua, mulai dari mesin bensin hingga sistem injeksi terbaru dengan standar bengkel resmi.',
-    icon: 'i-lucide-bike'
+    title: 'Game Server & Aplikasi Android',
+    desc: 'Konfigurasi dan maintenance game server Minecraft, CS:GO, GTA, dan lainnya. Plus pembuatan aplikasi Android sesuai kebutuhan.',
+    icon: 'i-lucide-gamepad-2'
   }
 ]
 
 const socials = [
-  { icon: 'i-simple-icons-tiktok', link: 'https://www.tiktok.com/@smkassalaambdg' },
-  { icon: 'i-simple-icons-instagram', link: 'https://www.instagram.com/smkassalaam/' },
-  { icon: 'i-simple-icons-youtube', link: 'https://www.youtube.com/@smkassalaambandung4011' }
+  { icon: 'i-simple-icons-whatsapp', link: 'https://wa.me/6283160325595' },
+  { icon: 'i-simple-icons-instagram', link: 'https://www.instagram.com/rakitweb_id' },
+  { icon: 'i-simple-icons-tiktok', link: 'https://www.tiktok.com/@webcraftidng' }
 ]
 
 onMounted(async () => {
@@ -80,9 +80,9 @@ onMounted(async () => {
         
         <div class="lg:col-span-5 space-y-8">
           <div class="reveal flex flex-col space-y-4">
-            <span class="text-[10px] font-bold uppercase tracking-[0.3em] text-primary-500">Expertise</span>
+            <span class="text-[10px] font-bold uppercase tracking-[0.3em] text-primary-500">Layanan Kami</span>
             <h2 class="text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white leading-tight">
-              Pilih Jalur Kesuksesan <br class="hidden md:block"/> Karir Industrimu.
+              Solusi Digital Lengkap <br class="hidden md:block"/> untuk Bisnis Anda.
             </h2>
           </div>
           
@@ -90,12 +90,12 @@ onMounted(async () => {
 
           <div class="reveal space-y-6">
             <p class="text-base text-gray-500 dark:text-gray-400 leading-relaxed font-medium">
-              SMK Assalaam Bandung menghadirkan kurikulum berbasis industri yang dirancang khusus untuk mengasah keterampilan praktis di bidang teknologi informasi dan otomotif.
+              RakitWeb hadir sebagai mitra digital terpercaya untuk bisnis Anda — dari pembuatan website, setup server, hingga game server dan aplikasi Android dengan harga yang bersahabat.
             </p>
             
             <div class="pt-4 flex items-center justify-between">
-              <NuxtLink to="https://ppdb.smkassalaambandung.sch.id/" target="_blank" class="group flex items-center gap-3 text-sm font-bold text-gray-900 dark:text-white transition-all hover:text-primary-500">
-                <span>Daftar Sekarang</span>
+              <NuxtLink to="https://wa.me/6283160325595" target="_blank" class="group flex items-center gap-3 text-sm font-bold text-gray-900 dark:text-white transition-all hover:text-primary-500">
+                <span>Konsultasi Gratis</span>
                 <div class="w-8 h-8 rounded-full border border-gray-100 dark:border-white/10 flex items-center justify-center transition-all group-hover:border-primary-500 group-hover:bg-primary-500 group-hover:text-white">
                   <UIcon name="i-lucide-arrow-right" class="w-3.5 h-3.5" />
                 </div>
@@ -124,9 +124,9 @@ onMounted(async () => {
           </div>
           
           <div class="reveal group p-8 bg-gray-50/50 dark:bg-white/[0.02] border border-gray-100 dark:border-white/5 rounded-sm flex flex-col justify-between hover:bg-white dark:hover:bg-white/[0.05] transition-all duration-700">
-            <h4 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Lihat Selengkapnya Seputar Jurusan</h4>
+            <h4 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Lihat Semua Paket & Harga</h4>
             <div class="flex items-center justify-between">
-              <p class="text-sm font-bold text-gray-900 dark:text-white">lihat</p>
+              <p class="text-sm font-bold text-gray-900 dark:text-white">Pricing →</p>
               <UIcon name="i-lucide-external-link" class="w-4 h-4 text-primary-500 opacity-0 group-hover:opacity-100 transition-all transform translate-y-2 group-hover:translate-y-0" />
             </div>
           </div>

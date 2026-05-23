@@ -8,46 +8,46 @@ import TestimonialsSection from '@/components/TestimonialsSection.vue'
 
 // SEO Implementation
 useSeoMeta({
-  title: 'SMK Assalaam Bandung || Sekolah Nomor #1 di Bandung Indonesia',
-  ogTitle: 'SMK Assalaam Bandung || Sekolah Nomor #1 di Bandung Indonesia',
-  description: 'SMK Assalaam adalah bagian dari Yayasan Assalaam yang mempersiapkan siswa untuk siap kerja dengan keterampilan & profesional di bidang industri dan kewirausahaan moderen. Terakreditasi A',
-  ogDescription: 'SMK Assalaam adalah bagian dari Yayasan Assalaam yang mempersiapkan siswa untuk siap kerja dengan keterampilan & profesional di bidang industri dan kewirausahaan moderen. Terakreditasi A',
-  ogImage: '/assalaam.svg',
-  ogUrl: 'https://assalaam.sch.id',
+  title: 'RakitWeb — Jasa Pembuatan Website & Digital Solution',
+  ogTitle: 'RakitWeb — Jasa Pembuatan Website & Digital Solution',
+  description: 'RakitWeb menyediakan jasa pembuatan website, setup hosting & domain, pembuatan aplikasi Android, hingga konfigurasi game server dengan harga terjangkau.',
+  ogDescription: 'RakitWeb menyediakan jasa pembuatan website, setup hosting & domain, pembuatan aplikasi Android, hingga konfigurasi game server dengan harga terjangkau.',
+  ogImage: '/rakitweb.svg',
+  ogUrl: 'https://rakitweb.id',
   ogType: 'website',
   twitterCard: 'summary_large_image',
-  twitterTitle: 'SMK Assalaam Bandung || Sekolah Nomor #1 di Bandung Indonesia',
-  twitterDescription: 'SMK Assalaam Bandung adalah sekolah kejuruan yang berfokus pada teknologi dan industri.',
-  twitterImage: '/assalaam.svg',
+  twitterTitle: 'RakitWeb — Jasa Pembuatan Website & Digital Solution',
+  twitterDescription: 'RakitWeb: solusi digital terbaik untuk bisnis Anda — website, hosting, Android, dan game server.',
+  twitterImage: '/rakitweb.svg',
 })
 
 // Impact Stats Data
 const impactStats = [
-  { value: '3000+', label: 'Lulusan Terbaik' },
-  { value: '90+', label: 'Telah Bekerja' },
-  { value: '100+', label: 'Dunia Industri' },
-  { value: '300+', label: 'Kuliah PTN' },
-  { value: '100%', label: 'Kurikulum Industri' },
-  { value: '1.378.442', label: 'Total Siswa' }
+  { value: '100+', label: 'Klien Puas' },
+  { value: '50+', label: 'Website Terbangun' },
+  { value: '20+', label: 'Server Aktif' },
+  { value: '10+', label: 'Aplikasi Android' },
+  { value: '99%', label: 'Uptime Server' },
+  { value: '24/7', label: 'Support Teknis' }
 ]
 
 // Content Data
 const content = [
   {
-    title: 'Bangun Karier Sebagai Talenta Mulai dari 0 hingga mahir',
-    desc: 'Ekosistem pembelajaran terintegrasi yang menghubungkan kurikulum vokasional dengan kebutuhan industri masa kini.'
+    title: 'Wujudkan Website Impian Anda Bersama RakitWeb',
+    desc: 'RakitWeb menyediakan jasa pembuatan website dan landing page profesional, modern, dan responsif untuk bisnis Anda — mulai dari company profile hingga toko online.'
   },
   {
-    title: 'Kunjungi Virtual School di SMK Assalaam sekarang juga',
-    desc: 'Platform belajar mandiri berbasis cloud yang memudahkan akses materi kapanpun dan dimanapun tanpa batasan ruang.'
+    title: 'Jasa Hosting, Domain & Setup Server Lengkap',
+    desc: 'Mulai dari setup hosting dan domain, migrasi website, hingga instalasi panel seperti Pterodactyl, cPanel, HestiaCP, CloudPanel, dan lainnya — dikerjakan langsung oleh tim RakitWeb.'
   },
   {
-    title: 'Coba SIM Assalaam dan pantau perkembangan siswa selama belajar',
-    desc: 'Sistem Informasi Manajemen sekolah paling lengkap untuk efisiensi operasional dan transparansi data akademik.'
+    title: 'Bangun Aplikasi Android & Game Server Tanpa Ribet',
+    desc: 'Kami melayani pembuatan aplikasi Android custom serta konfigurasi game server Minecraft, CS:GO, GTA, Terraria, Garry Mod, dan lainnya — lengkap dengan maintenance full.'
   }
 ]
 
-const subDescription = "Belajar teknologi dengan Kurikulum Industri, Dapatkan Sertifikasi Global, dan Bangun Portofolio yang Siap Kerja"
+const subDescription = "Website profesional, hosting andal, aplikasi Android, dan game server — semua bisa di RakitWeb"
 
 const currentIndex = ref(0)
 const heroContainer = ref<HTMLElement | null>(null)
@@ -164,7 +164,7 @@ onUnmounted(() => {
             <UIcon name="i-lucide-check" class="w-3 h-3" />
           </div>
           <span class="text-[10px] md:text-xs font-semibold tracking-tight text-gray-700 dark:text-gray-200 uppercase">
-            Sekolah Menengah Kejuruan No <span class ="text-amber-500">#1</span> di Bandung, Indonesia
+            Solusi Digital <span class="text-amber-500">#1</span> untuk Bisnis Anda — Semarang, Indonesia
           </span>
         </div>
 
@@ -192,17 +192,17 @@ onUnmounted(() => {
         <!-- Actions -->
         <div class="flex flex-wrap justify-center gap-6">
           <NuxtLink
-            to="https://ppdb.smkassalaambandung.sch.id/"
+            to="https://wa.me/6285187153883"
+            target="_blank"
             class="px-8 py-3 bg-gray-950 dark:bg-white text-white dark:text-gray-950 text-sm font-bold rounded-2xl shadow-xl transition-all hover:scale-105 hover:bg-primary-600 dark:hover:bg-primary-50 active:scale-95"
           >
-            PPDB
+            Konsultasi Gratis
           </NuxtLink>
           <NuxtLink
-            to="https://play.google.com/store/apps/details?id=com.sim.app.yayasan&pcampaignid=web_share"
+            to="#layanan"
             class="flex items-center gap-2 px-8 py-3 text-sm font-bold text-gray-500 dark:text-gray-300 border border-gray-200 dark:border-white/10 rounded-2xl backdrop-blur-md transition-all hover:bg-gray-50 dark:hover:bg-white/5"
           >
-            <UIcon name="i-simple-icons-googleplay" class="w-4 h-4" /> 
-            <span>Unduh</span>
+            <span>Lihat Layanan</span>
           </NuxtLink>
         </div>
       </section>
@@ -210,7 +210,7 @@ onUnmounted(() => {
       <!-- Branding -->
       <div class="absolute bottom-12 left-12 hidden md:flex items-center gap-4 opacity-30">
         <div class="w-12 h-[1px] bg-primary-500" />
-        <span class="text-[9px] font-mono tracking-widest uppercase">Assalaam Ecosystem</span>
+        <span class="text-[9px] font-mono tracking-widest uppercase">RakitWeb Digital</span>
       </div>
     </div>
 
@@ -219,8 +219,8 @@ onUnmounted(() => {
       <div class="flex flex-col md:flex-row w-full max-w-7xl mx-auto relative group/section">
         <div class="md:w-[280px] shrink-0 p-8 flex flex-col items-center md:items-start justify-center border-r border-gray-100 dark:border-white/5 z-20 bg-white dark:bg-[#09090b] relative">
           <h2 class="text-xs md:text-sm font-black tracking-[0.1em] text-gray-400 dark:text-gray-500 uppercase leading-snug text-center md:text-left">
-            Memberdayakan Ide<br />
-            <span class="text-gray-900 dark:text-gray-300">untuk yang Terbaik & Tercerdas</span>
+            Dipercaya Oleh<br />
+            <span class="text-gray-900 dark:text-gray-300">Klien & Bisnis Kami</span>
           </h2>
           <div class="absolute inset-y-0 -right-20 w-20 bg-gradient-to-r from-white dark:from-[#09090b] to-transparent z-10 pointer-events-none hidden md:block" />
         </div>
@@ -232,19 +232,7 @@ onUnmounted(() => {
                 <img src="https://www.vectorlogo.zone/logos/google/google-ar21.svg" class="h-14 md:h-18 w-full object-contain pointer-events-none" alt="Google" />
               </div>
               <div class="w-[200px] md:w-[240px] px-6 md:px-8 py-10 md:py-12 flex items-center justify-center border-r border-gray-100 dark:border-white/5 transition-all duration-700">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Honda.svg/1280px-Honda.svg.png?_=20250619145147" class="h-14 md:h-18 w-full object-contain dark:invert pointer-events-none" alt="Honda" />
-              </div>
-              <div class="w-[200px] md:w-[240px] px-6 md:px-8 py-10 md:py-12 flex items-center justify-center border-r border-gray-100 dark:border-white/5 transition-all duration-700">
-                <img src="/company/mitshubisi.png" class="h-14 md:h-18 w-full object-contain dark:invert pointer-events-none" alt="Mitsubishi" />
-              </div>
-              <div class="w-[200px] md:w-[240px] px-6 md:px-8 py-10 md:py-12 flex items-center justify-center border-r border-gray-100 dark:border-white/5 bg-gray-50/50 dark:bg-transparent transition-all duration-700">
-                <img src="https://www.vectorlogo.zone/logos/microsoft/microsoft-ar21.svg" class="h-14 md:h-18 w-full object-contain pointer-events-none" alt="Microsoft" />
-              </div>
-              <div class="w-[200px] md:w-[240px] px-6 md:px-8 py-10 md:py-12 flex items-center justify-center border-r border-gray-100 dark:border-white/5 transition-all duration-700">
-                <img src="/company/fuso.png" class="h-12 md:h-16 w-full object-contain dark:invert pointer-events-none" alt="Fuso" onerror="this.src='https://www.logo.wine/a/logo/Mitsubishi_Fuso_Truck_and_Bus_Corporation/Mitsubishi_Fuso_Truck_and_Bus_Corporation-Logo.wine.svg'" />
-              </div>
-              <div class="w-[200px] md:w-[240px] px-6 md:px-8 py-10 md:py-12 flex items-center justify-center border-r border-gray-100 dark:border-white/5 transition-all duration-700">
-                <img src="/company/dakpng.png" class="h-12 md:h-16 w-full object-contain dark:invert pointer-events-none" alt="Fuso" onerror="this.src='https://www.logo.wine/a/logo/Mitsubishi_Fuso_Truck_and_Bus_Corporation/Mitsubishi_Fuso_Truck_and_Bus_Corporation-Logo.wine.svg'" />
+                <img src="/company/Vuxi.png" class="h-12 md:h-16 w-full object-contain dark:invert pointer-events-none" alt="Fuso" onerror="this.src='https://www.logo.wine/a/logo/Mitsubishi_Fuso_Truck_and_Bus_Corporation/Mitsubishi_Fuso_Truck_and_Bus_Corporation-Logo.wine.svg'" />
               </div>
               <div class="w-[200px] md:w-[240px] px-6 md:px-8 py-10 md:py-12 flex items-center justify-center border-r border-gray-100 dark:border-white/5 bg-gray-50/50 dark:bg-transparent transition-all duration-700">
                 <span class="text-3xl md:text-4xl font-black tracking-tighter text-gray-900 dark:text-white">NLFTs</span>
