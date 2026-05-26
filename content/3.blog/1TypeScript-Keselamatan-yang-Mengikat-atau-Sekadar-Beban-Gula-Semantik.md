@@ -4,10 +4,14 @@ description: Analisis kritis terhadap TypeScript sebagai superset JavaScript, me
 image:
   src: ./blog/ts.png
 authors:
-  - name: Redaksi Teknologi
+  - name: Silo Kusuma
     to: 
     avatar:
       src: https://i.pravatar.cc/128?u=ts
+  - name: Davin Gahisan
+    to: 
+    avatar:
+      src: https://i.pravatar.cc/128?u=ts2
 date: 2026-05-23
 badge:
   label: TypeScript, JavaScript, Pemrograman
