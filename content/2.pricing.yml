@@ -1,0 +1,83 @@
+title: Paket Harga RakitWeb
+description: Pilih paket yang sesuai kebutuhan bisnis Anda. Harga transparan, tanpa biaya tersembunyi.
+seo:
+  title: Harga Layanan - RakitWeb
+  description: Lihat paket harga jasa website, hosting, game server, dan aplikasi Android dari RakitWeb.
+navigation.icon: i-lucide-credit-card
+plans:
+  - title: Website Starter
+    description: Cocok untuk UMKM dan personal branding yang ingin hadir di internet.
+    price:
+      month: Rp350rb
+      year: Rp750rb
+    button:
+      label: Konsultasi Sekarang
+      color: neutral
+      variant: subtle
+    features:
+      - 5-10 Halaman Website
+      - Desain Responsif (Mobile-Friendly)
+      - Hosting & Domain Included
+      - SEO Dasar
+      - 1 Bulan Support
+      - Gratis Revisi 2x
+      - Selesai dalam 7-14 Hari
+  - title: Website Pro
+    description: Untuk bisnis yang butuh website profesional dengan fitur lengkap.
+    price:
+      month: Rp1,5jt
+      year: Rp4jt
+    highlight: true
+    scale: true
+    button:
+      label: Mulai Sekarang
+    features:
+      - Halaman Tidak Terbatas
+      - Custom Design & Branding
+      - SEO Optimization Lanjutan
+      - Maintenance 3 Bulan
+      - Toko Online (Opsional)
+      - Integrasi WhatsApp & Maps
+      - Priority Support
+      - Selesai dalam 14-30 Hari
+  - title: Hosting & Domain
+    description: Setup hosting, koneksi domain, dan migrasi website.
+    price:
+      month: Rp150rb
+      year: Rp300rb
+    button:
+      label: Konsultasi Sekarang
+      color: neutral
+      variant: subtle
+    features:
+      - Setup Hosting Baru
+      - Koneksi & Konfigurasi Domain
+      - Migrasi Website Existing
+      - Instalasi Panel (cPanel/HestiaCP)
+      - SSL Certificate
+      - Backup & Restore
+      - Support Teknis
+logos:
+  title: Teknologi yang Kami Gunakan
+  icons:
+    - i-simple-icons-vuedotjs
+    - i-simple-icons-nuxtdotjs
+    - i-simple-icons-nestjs
+    - i-simple-icons-nextdotjs
+    - i-simple-icons-cloudflare
+faq:
+  title: Pertanyaan yang Sering Diajukan
+  description: Punya pertanyaan? Kami siap membantu. Hubungi kami via WhatsApp jika tidak ada di sini.
+  items:
+    - label: Berapa lama waktu pengerjaan website?
+      content: Paket Starter selesai dalam 7-14 hari kerja, Paket Pro 14-30 hari. Waktu bisa lebih cepat tergantung kesiapan konten dari klien.
+    - label: Apakah website sudah responsif di HP dan tablet?
+      content: Ya, semua website yang kami buat sudah 100% responsif dan dioptimalkan untuk tampil sempurna di semua ukuran layar.
+    - label: Apakah ada garansi setelah website selesai?
+      content: Ya! Paket Starter mendapat 1 bulan support gratis, Paket Pro mendapat 3 bulan maintenance. Bug dan error kami perbaiki tanpa biaya tambahan.
+    - label: Berapa biaya pembuatan website?
+      content: Paket Starter mulai Rp350.000 sekali bayar (5-10 halaman + hosting + domain). Paket Pro mulai Rp1.500.000 dengan fitur lengkap. Konsultasi gratis untuk custom project.
+    - label: Apakah bisa revisi desain?
+      content: Tentu! Paket Starter sudah termasuk 2x revisi gratis. Paket Pro revisi tidak terbatas selama masa pengerjaan.
+    - label: Apakah sudah termasuk domain bisnis (.com, .id) dan server?
+      content: Paket Starter dan Pro sudah termasuk hosting dan domain selama 1 tahun. Untuk Paket Hosting & Domain, kami bantu setup di hosting pilihan Anda.
