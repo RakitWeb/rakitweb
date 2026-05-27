@@ -1,4 +1,4 @@
-title: Paket Harga RakitWeb
+title: Paket Harga Website
 description: Pilih paket yang sesuai kebutuhan bisnis Anda. Harga transparan, tanpa biaya tersembunyi.
 seo:
   title: Harga Layanan - RakitWeb
@@ -8,8 +8,8 @@ plans:
   - title: Website Starter
     description: Cocok untuk UMKM dan personal branding yang ingin hadir di internet.
     price:
-      month: Rp350rb
-      year: Rp750rb
+      month: Rp490rb
+      year: Rp600rb
     button:
       label: Konsultasi Sekarang
       color: neutral
@@ -25,8 +25,8 @@ plans:
   - title: Website Pro
     description: Untuk bisnis yang butuh website profesional dengan fitur lengkap.
     price:
-      month: Rp1,5jt
-      year: Rp4jt
+      month: Rp700rb
+      year: Rp800rb
     highlight: true
     scale: true
     button:
@@ -40,11 +40,11 @@ plans:
       - Integrasi WhatsApp & Maps
       - Priority Support
       - Selesai dalam 14-30 Hari
-  - title: Hosting & Domain
+  - title: Website Company
     description: Setup hosting, koneksi domain, dan migrasi website.
     price:
-      month: Rp150rb
-      year: Rp300rb
+      month: Rp1,5jt
+      year: Rp2,5jt
     button:
       label: Konsultasi Sekarang
       color: neutral
@@ -76,8 +76,8 @@ faq:
     - label: Apakah ada garansi setelah website selesai?
       content: Ya! Paket Starter mendapat 1 bulan support gratis, Paket Pro mendapat 3 bulan maintenance. Bug dan error kami perbaiki tanpa biaya tambahan.
     - label: Berapa biaya pembuatan website?
-      content: Paket Starter mulai Rp350.000 sekali bayar (5-10 halaman + hosting + domain). Paket Pro mulai Rp1.500.000 dengan fitur lengkap. Konsultasi gratis untuk custom project.
+      content: Paket Starter mulai Rp490.000/bulan (5-10 halaman + hosting + domain 1 tahun). Paket Pro mulai Rp700.000/bulan dengan fitur lengkap. Konsultasi gratis untuk custom project.
     - label: Apakah bisa revisi desain?
       content: Tentu! Paket Starter sudah termasuk 2x revisi gratis. Paket Pro revisi tidak terbatas selama masa pengerjaan.
     - label: Apakah sudah termasuk domain bisnis (.com, .id) dan server?
-      content: Paket Starter dan Pro sudah termasuk hosting dan domain selama 1 tahun. Untuk Paket Hosting & Domain, kami bantu setup di hosting pilihan Anda.
+      content: Paket Starter dan Pro sudah termasuk hosting dan domain selama 1 tahun. Untuk Paket Website Company, kami bantu setup di hosting pilihan Anda.
