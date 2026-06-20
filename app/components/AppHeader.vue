@@ -1,0 +1,595 @@
+<script setup lang="ts">
+import { ref, nextTick, onMounted, onUnmounted } from 'vue'
+import gsap from 'gsap'
+
+// ── Navigation Data ────────────────────────────────────────────
+const productLinks = [
+  { icon: 'i-lucide-globe', label: 'Jasa Pembuatan Website', desc: 'Company profile, landing page, toko online.', to: '/jasa' },
+  { icon: 'i-lucide-server', label: 'Hosting', desc: 'Setup, migrasi, dan konfigurasi server.', to: '/jasa/hosting' },
+  { icon: 'i-simple-icons-nuxtdotjs', label: 'Nuxtjs', desc: 'Framework Vue super cepat untuk web modern.', to: '/template/nuxtjs', color: '#00DC82' },
+  { icon: 'i-lucide-smartphone', label: 'Aplikasi Android', desc: 'Pembuatan aplikasi Android custom.', to: '/#product' },
+  { icon: 'i-lucide-gamepad-2', label: 'Game Server', desc: 'Minecraft, CS:GO, GTA, dan lainnya.', to: '/#product' },
+  { icon: 'i-simple-icons-nestjs', label: 'Nestjs', desc: 'Backend Node.js yang scalable & enterprise-grade.', to: '/#product', color: '#E0234E' },
+  // ── Paket & Harga (dipindahkan ke sini dari menu Paket Harga) ──
+  { icon: 'i-lucide-rocket', label: 'Paket Website Starter', desc: '5-10 halaman + hosting + domain, Rp350rb-750rb.', to: '/jasa/situs-statis' },
+  { icon: 'i-lucide-star', label: 'Paket Website Pro', desc: 'Custom + SEO + maintenance 3 bulan, Rp1,5jt-4jt.', to: '/jasa/aplikasi-web' },
+  { icon: 'i-lucide-server', label: 'Paket Game Server', desc: 'Panel + config + maintenance, Rp200rb-800rb/bulan.', to: '/pricing' },
+  { icon: 'i-lucide-smartphone', label: 'Paket Android', desc: 'Aplikasi POS & kasir, Rp500rb/bulan.', to: '/pricing-android' }
+]
+
+// ── Resources Data (3-Column Vercel-Style) ─────────────────────
+const resourcesCompany = [
+  { icon: 'i-lucide-smile', label: 'Klien Kami', desc: 'Dipercaya tim terbaik', to: '/klien' },
+  { icon: 'i-lucide-pen-line', label: 'Blog & Artikel', desc: 'Tulisan & perubahan terbaru', to: '/blog' },
+  { icon: 'i-lucide-file-text', label: 'Changelog', desc: 'Lihat yang baru saja rilis', to: '/changelog' },
+  { icon: 'i-lucide-briefcase', label: 'Testimoni', desc: 'Baca ulasan dari klien', to: '/testimoni' },
+  { icon: 'i-lucide-calendar', label: 'Events', desc: 'Bergabung di acara kami', to: '/events' }
+]
+
+const resourcesLearn = [
+  { icon: 'i-lucide-book-open', label: 'Dokumentasi', desc: 'Panduan lengkap RakitWeb', to: '/docs' },
+  { icon: 'i-lucide-graduation-cap', label: 'Tutorial', desc: 'Kursus linear untuk upgrade skill', to: '/tutorial' },
+  { icon: 'i-lucide-life-buoy', label: 'Pusat Bantuan', desc: 'Temukan jawaban dengan cepat', to: '/bantuan' },
+  { icon: 'i-lucide-users', label: 'Komunitas', desc: 'Bergabung dalam diskusi', to: '/komunitas' }
+]
+
+const resourcesConnect = [
+  { icon: 'i-simple-icons-nuxtdotjs', label: 'Nuxt', desc: 'The progressive web framework', to: '/nuxt', color: '#00DC82' },
+  { icon: 'i-simple-icons-nestjs', label: 'NestJS', desc: 'Scalable Node.js backend', to: '/nestjs', color: '#E0234E' },
+  { image: '/company/wa.png', label: 'WhatsApp', desc: 'Chat langsung dengan kami', to: 'https://wa.me/6283160325595' },
+  { icon: 'i-lucide-users', label: 'Tim Kami', desc: 'Kenali tim di balik RakitWeb', to: '/team' }
+]
+
+const upcomingEvents = [
+  { day: '01', month: 'JUN', title: 'Promo Website Starter', location: 'Mulai Rp350.000 sekali bayar' },
+  { day: '15', month: 'JUN', title: 'Diskon Setup Hosting', location: 'Setup + migrasi mulai Rp150.000' },
+  { day: '20', month: 'JUN', title: 'Konsultasi Gratis', location: 'Via WhatsApp kapan saja' },
+  { day: '01', month: 'JUL', title: 'Paket Game Server Baru', location: 'Minecraft, CS:GO, GTA & lebih' },
+  { day: '10', month: 'JUL', title: 'Workshop Web Development', location: 'Online — Semarang, Indonesia' }
+]
+
+const featuredEvents = [
+  { title: 'Website\nStarter', dateMonth: 'JUN', dateRange: '350rb', year: '2026', city: 'SEMARANG', country: 'ID', img: 'https://jurnal.mifandimandiri.com/public/journals/17/submission_149_149_coverImage_en_US.png' },
+  { title: 'GAME\nSERVER', dateMonth: 'JUN', dateRange: '200rb', year: '2026', city: 'CLOUD', country: 'ID', img: 'https://cdn-dynmedia-1.microsoft.com/is/image/microsoftassets/minecraft-tiny-takeover-thumbnail' },
+  { title: 'ANDROID\nAPP', dateMonth: 'JUL', dateRange: 'Custom', year: '2026', city: 'SEMARANG', country: 'ID', img: 'https://bwaplatformbucket.sgp1.cdn.digitaloceanspaces.com/assets/thumbnail_tips/Login.png' }
+]
+
+// ── State ───────────────────────────────────────────
+const activeMenu = ref<string | null>(null)
+const mobileOpen = ref(false)
+const expandedMobile = ref<string | null>(null)
+
+// ── Vercel Hover State ──────────────────────────────
+const hoverState = ref({
+  width: 0,
+  left: 0,
+  opacity: 0
+})
+
+// ── Refs ────────────────────────────────────────────
+const headerEl = ref<HTMLElement>()
+const dropdownEl = ref<HTMLElement>()
+const mobileOverlay = ref<HTMLElement>()
+const mobilePanel = ref<HTMLElement>()
+
+let closeTimeout: ReturnType<typeof setTimeout>
+let ctx: gsap.Context | null = null
+
+// ── Helper Utilities ────────────────────────────────
+const getMenuKey = (menu: string) => {
+  return menu.toLowerCase().replace(/ & /g, '-').replace(/ /g, '-')
+}
+
+// ── Desktop Navigation Logic ────────────────────────
+const openMenu = (menu: string) => {
+  clearTimeout(closeTimeout)
+  const wasOpen = activeMenu.value !== null
+  activeMenu.value = menu
+
+  nextTick(() => {
+    if (!dropdownEl.value) return
+    if (!wasOpen) {
+      gsap.fromTo(dropdownEl.value,
+        { opacity: 0, y: -4 },
+        { opacity: 1, y: 0, duration: 0.15, ease: 'power2.out' }
+      )
+    }
+    gsap.fromTo(dropdownEl.value.querySelectorAll('.dd-animate'),
+      { opacity: 0, y: 4 },
+      { opacity: 1, y: 0, stagger: 0.015, duration: 0.2, ease: 'power2.out', delay: wasOpen ? 0 : 0.03 }
+    )
+  })
+}
+
+const scheduleClose = () => {
+  closeTimeout = setTimeout(() => {
+    if (dropdownEl.value) {
+      gsap.to(dropdownEl.value, {
+        opacity: 0, y: -4, duration: 0.12, ease: 'power2.in',
+        onComplete: () => { activeMenu.value = null }
+      })
+    } else {
+      activeMenu.value = null
+    }
+  }, 100)
+}
+
+const cancelClose = () => clearTimeout(closeTimeout)
+
+const trackHover = (event: MouseEvent) => {
+  const el = event.currentTarget as HTMLElement
+  if (el) {
+    hoverState.value = {
+      width: el.offsetWidth,
+      left: el.offsetLeft,
+      opacity: 1
+    }
+  }
+}
+
+const resetHover = () => {
+  hoverState.value.opacity = 0
+}
+
+// ── Mobile Menu ─────────────────────────────────────
+const openMobile = () => {
+  mobileOpen.value = true
+  document.body.style.overflow = 'hidden'
+  nextTick(() => {
+    if (mobileOverlay.value) {
+      gsap.fromTo(mobileOverlay.value, { opacity: 0 }, { opacity: 1, duration: 0.2 })
+    }
+    if (mobilePanel.value) {
+      gsap.fromTo(mobilePanel.value, { y: -8, opacity: 0 }, { y: 0, opacity: 1, duration: 0.25, ease: 'power2.out' })
+    }
+  })
+}
+
+const closeMobile = () => {
+  if (mobilePanel.value) {
+    gsap.to(mobilePanel.value, { y: -8, opacity: 0, duration: 0.2, ease: 'power2.in' })
+  }
+  if (mobileOverlay.value) {
+    gsap.to(mobileOverlay.value, {
+      opacity: 0, duration: 0.2,
+      onComplete: () => {
+        mobileOpen.value = false
+        document.body.style.overflow = ''
+      }
+    })
+  }
+}
+
+const toggleMobileSection = (key: string) => {
+  expandedMobile.value = expandedMobile.value === key ? null : key
+}
+
+// ── Lifecycle ───────────────────────────────────────
+onMounted(() => {
+  ctx = gsap.context(() => {
+    gsap.from('.nav-enter', {
+      opacity: 0, y: -4, stagger: 0.02, duration: 0.4, ease: 'power2.out', delay: 0.05
+    })
+  }, headerEl.value!)
+})
+
+const isSearchOpen = useState('search-open')
+const toggleSearch = () => { isSearchOpen.value = true }
+
+onUnmounted(() => {
+  ctx?.revert()
+  clearTimeout(closeTimeout)
+  document.body.style.overflow = ''
+})
+</script>
+
+<template>
+  <!-- ════════════════════════════════════════════════ -->
+  <!-- HEADER                                           -->
+  <!-- ════════════════════════════════════════════════ -->
+  <header
+    ref="headerEl"
+    class="sticky top-0 z-50 w-full border-b border-zinc-200 dark:border-zinc-800 bg-white/95 dark:bg-black/95 backdrop-blur-md transition-colors duration-300"
+  >
+    <!-- Vercel Minimalist Top Announcement Bar -->
+    <div class="w-full bg-zinc-950 text-zinc-200 py-2 px-5 sm:px-6 flex items-center justify-between text-[11px] font-normal tracking-tight border-b border-zinc-800">
+       <div class="flex items-center gap-2 mx-auto sm:mx-0">
+          <span class="inline-flex items-center justify-center bg-zinc-800 text-[9px] font-bold px-1.5 py-0.5 rounded text-white tracking-widest">FREE</span>
+          <span class="text-zinc-300">Konsultasi pembuatan platform digital gratis via WhatsApp.</span>
+       </div>
+       <NuxtLink to="https://wa.me/6283160325595" target="_blank" class="hidden sm:flex items-center gap-1 font-medium hover:text-white transition-colors">
+          Hubungi Kami <UIcon name="i-lucide-arrow-right" class="w-3.5 h-3.5" />
+       </NuxtLink>
+    </div>
+
+    <!-- Main Navigation Bar -->
+    <div class="max-w-7xl mx-auto px-5 sm:px-6">
+      <div class="flex items-center justify-between h-14">
+        <!-- Logo -->
+        <NuxtLink to="/" class="nav-enter shrink-0 flex items-center">
+          <AppLogo class="h-6 w-auto" />
+        </NuxtLink>
+
+        <!-- Desktop Nav (Vercel-Style Dynamic Hover Backplate) -->
+        <nav
+          class="hidden lg:flex items-center gap-0.5 relative py-3"
+          @mouseleave="() => { scheduleClose(); resetHover(); }"
+        >
+          <!-- Sliding Backdrop Pill -->
+          <div 
+            class="absolute pointer-events-none rounded-md bg-zinc-100 dark:bg-zinc-900 transition-all duration-150 ease-out z-0"
+            :style="{
+              width: `${hoverState.width}px`,
+              left: `${hoverState.left}px`,
+              opacity: hoverState.opacity,
+              height: '30px'
+            }"
+          />
+
+          <!-- Interactive Mega Menu Buttons -->
+          <button
+            v-for="menu in ['Product', 'Resources', 'Tentang & Kontak']"
+            :key="menu"
+            class="nav-enter relative text-[13px] font-medium px-3 h-7.5 rounded-md flex items-center gap-1 transition-colors duration-150 z-10"
+            :class="activeMenu === getMenuKey(menu) ? 'text-zinc-950 dark:text-zinc-50' : 'text-zinc-500 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-zinc-50'"
+            @mouseenter="() => { openMenu(getMenuKey(menu)); trackHover($event); }"
+          >
+            {{ menu }}
+            <UIcon 
+              name="i-lucide-chevron-down" 
+              class="w-3 h-3 opacity-40 transition-transform duration-200"
+              :class="activeMenu === getMenuKey(menu) ? 'rotate-180 opacity-80' : ''"
+            />
+          </button>
+
+          <NuxtLink
+            to="/partner"
+            class="nav-enter text-[13px] font-medium px-3.5 h-14 flex items-center text-muted-foreground hover:text-foreground transition-colors"
+            @mouseenter="scheduleClose"
+          >
+            Partner
+          </NuxtLink>
+        </nav>
+
+        <!-- Right Side Controls -->
+        <div class="flex items-center gap-3 nav-enter">
+          <!-- Vercel Search Box Button -->
+          <button
+            class="hidden sm:flex items-center justify-between w-44 px-2.5 py-1 rounded-md bg-zinc-50 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 hover:border-zinc-350 dark:hover:border-zinc-700 transition-all group"
+            @click="toggleSearch"
+          >
+            <div class="flex items-center gap-1.5">
+              <UIcon name="i-lucide-search" class="w-3.5 h-3.5 text-zinc-400 group-hover:text-zinc-500 transition-colors" />
+              <span class="text-xs text-zinc-400 group-hover:text-zinc-500 transition-colors">Cari...</span>
+            </div>
+            <div class="flex items-center text-[10px] font-mono text-zinc-400 bg-white dark:bg-black px-1.5 py-0.5 rounded border border-zinc-200 dark:border-zinc-800">
+              <span>⌘K</span>
+            </div>
+          </button>
+
+          <UColorModeButton size="sm" class="text-zinc-500 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-zinc-50 bg-transparent hover:bg-zinc-100 dark:hover:bg-zinc-900 border-none shadow-none" />
+          
+          <button
+            class="lg:hidden p-1.5 rounded-md text-zinc-500 hover:bg-zinc-100 dark:hover:bg-zinc-900 transition-colors"
+            @click="openMobile"
+          >
+            <UIcon name="i-lucide-menu" class="w-5 h-5" />
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════════ -->
+    <!-- DESKTOP DROPDOWN PANEL                        -->
+    <!-- ══════════════════════════════════════════════ -->
+    <div
+      v-if="activeMenu"
+      ref="dropdownEl"
+      class="absolute left-0 right-0 top-full bg-white dark:bg-[#000000] border-b border-zinc-250 dark:border-zinc-800 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.06)] dark:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.6)]"
+      @mouseenter="cancelClose"
+      @mouseleave="scheduleClose"
+    >
+      <div class="max-w-7xl mx-auto px-6 py-8">
+
+        <!-- ▸ Product Panel (4 Columns Grid - termasuk Paket & Harga) -->
+        <div v-if="activeMenu === 'product'">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-6">
+            <NuxtLink
+              v-for="item in productLinks"
+              :key="item.label"
+              :to="item.to"
+              class="dd-animate group flex items-start gap-4 p-2 -mx-2 rounded-lg hover:bg-zinc-50 dark:hover:bg-zinc-900/40 transition-colors duration-150"
+            >
+              <div class="w-8 h-8 rounded border border-zinc-200 dark:border-zinc-850 bg-white dark:bg-zinc-950 flex items-center justify-center shrink-0 group-hover:border-zinc-400 dark:group-hover:border-zinc-600 transition-colors">
+                <UIcon
+                  :name="item.icon"
+                  :style="item.color ? { color: item.color } : null"
+                  class="w-4 h-4 text-zinc-500 dark:text-zinc-400 group-hover:text-zinc-800 dark:group-hover:text-zinc-200 transition-colors"
+                />
+              </div>
+              <div>
+                <div class="text-[13px] font-medium text-zinc-900 dark:text-zinc-100 flex items-center gap-1">
+                  {{ item.label }}
+                  <UIcon name="i-lucide-arrow-up-right" class="w-3 h-3 opacity-0 group-hover:opacity-100 transition-all transform translate-y-0.5 group-hover:translate-y-0 text-zinc-400" />
+                </div>
+                <div class="text-xs text-zinc-400 dark:text-zinc-500 mt-1 leading-relaxed">{{ item.desc }}</div>
+              </div>
+            </NuxtLink>
+          </div>
+        </div>
+
+        <!-- ▸ Resources Panel (3-Column Vercel-Style: Company / Learn / Open Source) -->
+        <div v-else-if="activeMenu === 'resources'" class="grid grid-cols-1 md:grid-cols-3 gap-0 md:divide-x divide-zinc-200 dark:divide-zinc-800/60">
+          <!-- Column 1: Company -->
+          <div class="dd-animate px-0 md:pr-8 pb-6 md:pb-0">
+            <h3 class="text-[11px] font-bold text-zinc-400 dark:text-zinc-500 tracking-wider uppercase mb-5">Company</h3>
+            <div class="space-y-1">
+              <NuxtLink
+                v-for="item in resourcesCompany"
+                :key="item.label"
+                :to="item.to"
+                class="dd-animate group flex items-center gap-4 p-2 -mx-2 rounded-lg hover:bg-zinc-50 dark:hover:bg-zinc-900/40 transition-colors duration-150"
+              >
+                <div class="w-8 h-8 rounded border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 flex items-center justify-center shrink-0 group-hover:border-zinc-400 dark:group-hover:border-zinc-600 transition-colors">
+                  <UIcon :name="item.icon" class="w-4 h-4 text-zinc-500 dark:text-zinc-400 group-hover:text-zinc-800 dark:group-hover:text-zinc-200 transition-colors" />
+                </div>
+                <div>
+                  <div class="text-[13px] font-medium text-zinc-900 dark:text-zinc-100 group-hover:text-zinc-600 dark:group-hover:text-zinc-300 transition-colors">
+                    {{ item.label }}
+                  </div>
+                  <div class="text-xs text-zinc-400 dark:text-zinc-500 mt-0.5 leading-relaxed">{{ item.desc }}</div>
+                </div>
+              </NuxtLink>
+            </div>
+          </div>
+
+          <!-- Column 2: Learn -->
+          <div class="dd-animate px-0 md:px-8 py-6 md:py-0 border-t md:border-t-0 border-zinc-200 dark:border-zinc-800/60">
+            <h3 class="text-[11px] font-bold text-zinc-400 dark:text-zinc-500 tracking-wider uppercase mb-5">Learn</h3>
+            <div class="space-y-1">
+              <NuxtLink
+                v-for="item in resourcesLearn"
+                :key="item.label"
+                :to="item.to"
+                class="dd-animate group flex items-center gap-4 p-2 -mx-2 rounded-lg hover:bg-zinc-50 dark:hover:bg-zinc-900/40 transition-colors duration-150"
+              >
+                <div class="w-8 h-8 rounded border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 flex items-center justify-center shrink-0 group-hover:border-zinc-400 dark:group-hover:border-zinc-600 transition-colors">
+                  <UIcon :name="item.icon" class="w-4 h-4 text-zinc-500 dark:text-zinc-400 group-hover:text-zinc-800 dark:group-hover:text-zinc-200 transition-colors" />
+                </div>
+                <div>
+                  <div class="text-[13px] font-medium text-zinc-900 dark:text-zinc-100 group-hover:text-zinc-600 dark:group-hover:text-zinc-300 transition-colors">
+                    {{ item.label }}
+                  </div>
+                  <div class="text-xs text-zinc-400 dark:text-zinc-500 mt-0.5 leading-relaxed">{{ item.desc }}</div>
+                </div>
+              </NuxtLink>
+            </div>
+          </div>
+
+          <!-- Column 3: Connect -->
+          <div class="dd-animate px-0 md:pl-8 pt-6 md:pt-0 border-t md:border-t-0 border-zinc-200 dark:border-zinc-800/60">
+            <h3 class="text-[11px] font-bold text-zinc-400 dark:text-zinc-500 tracking-wider uppercase mb-5">Connect</h3>
+            <div class="space-y-1">
+              <NuxtLink
+                v-for="item in resourcesConnect"
+                :key="item.label"
+                :to="item.to"
+                :target="item.to.startsWith('http') ? '_blank' : undefined"
+                class="dd-animate group flex items-center gap-4 p-2 -mx-2 rounded-lg hover:bg-zinc-50 dark:hover:bg-zinc-900/40 transition-colors duration-150"
+              >
+                <div class="w-8 h-8 rounded border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 flex items-center justify-center shrink-0 group-hover:border-zinc-400 dark:group-hover:border-zinc-600 transition-colors overflow-hidden">
+                  <img
+                    v-if="item.image"
+                    :src="item.image"
+                    :alt="item.label"
+                    class="w-full h-full object-cover"
+                  />
+                  <UIcon
+                    v-else
+                    :name="item.icon"
+                    :style="item.color ? { color: item.color } : null"
+                    class="w-4 h-4 text-zinc-500 dark:text-zinc-400 group-hover:text-zinc-800 dark:group-hover:text-zinc-200 transition-colors"
+                  />
+                </div>
+                <div>
+                  <div class="text-[13px] font-medium text-zinc-900 dark:text-zinc-100 group-hover:text-zinc-600 dark:group-hover:text-zinc-300 transition-colors">
+                    {{ item.label }}
+                  </div>
+                  <div class="text-xs text-zinc-400 dark:text-zinc-500 mt-0.5 leading-relaxed">{{ item.desc }}</div>
+                </div>
+              </NuxtLink>
+            </div>
+          </div>
+        </div>
+
+        <!-- ▸ Tentang & Kontak Panel (Megamenu: Events & Feature Cards) -->
+        <div v-else-if="activeMenu === 'tentang-kontak'" class="flex gap-8">
+          <!-- Left Sidebar: Event List -->
+          <div class="w-[300px] shrink-0 pr-8 border-r border-zinc-200 dark:border-zinc-800/60">
+            <h3 class="dd-animate text-[11px] font-bold text-zinc-400 dark:text-zinc-500 tracking-wider uppercase mb-5">Promo & Info Terbaru</h3>
+            <div class="space-y-1">
+              <div
+                v-for="evt in upcomingEvents"
+                :key="evt.title"
+                class="dd-animate flex items-start gap-3 p-2 -mx-2 rounded-md hover:bg-zinc-50 dark:hover:bg-zinc-900/40 group cursor-pointer transition-colors"
+              >
+                <div class="w-8 h-8 rounded border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 flex flex-col items-center justify-center shrink-0">
+                  <span class="text-xs font-bold text-zinc-800 dark:text-zinc-200 leading-none">{{ evt.day }}</span>
+                  <span class="text-[7px] font-bold text-zinc-400 uppercase leading-none mt-0.5">{{ evt.month }}</span>
+                </div>
+                <div class="min-w-0 pt-0.5">
+                  <h4 class="text-xs font-medium leading-tight text-zinc-900 dark:text-zinc-100 group-hover:text-zinc-500 transition-colors">{{ evt.title }}</h4>
+                  <p class="text-[10px] text-zinc-400 dark:text-zinc-500 mt-0.5 truncate">{{ evt.location }}</p>
+                </div>
+              </div>
+            </div>
+            <NuxtLink to="/blog" class="dd-animate inline-flex items-center gap-1 text-xs font-medium text-zinc-900 dark:text-zinc-200 mt-4 hover:gap-1.5 transition-all">
+              Lihat semua berita <UIcon name="i-lucide-arrow-right" class="w-3.5 h-3.5" />
+            </NuxtLink>
+          </div>
+
+          <!-- Right Content: Featured Cards -->
+          <div class="flex-1 flex gap-4 bg-zinc-50/30 dark:bg-zinc-900/10 p-3 rounded-xl border border-zinc-200/55 dark:border-zinc-800/40">
+            <div
+              v-for="card in featuredEvents"
+              :key="card.title"
+              class="dd-animate flex-1 relative overflow-hidden rounded-lg group cursor-pointer border border-zinc-200/60 dark:border-zinc-800 shadow-sm"
+              style="aspect-ratio: 3/4;"
+            >
+              <img :src="card.img" :alt="card.title" class="absolute inset-0 w-full h-full object-cover transition-transform duration-[800ms] ease-out group-hover:scale-105">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/10 z-[1]" />
+              <div class="absolute top-0 left-0 right-0 pt-4 px-4 z-10">
+                <h4 class="text-[13px] font-bold text-white text-center leading-snug tracking-tight whitespace-pre-line">{{ card.title }}</h4>
+              </div>
+              <div class="absolute bottom-0 left-0 right-0 px-4 pb-3.5 z-10">
+                <div class="flex items-baseline text-white/90">
+                  <span class="text-[8px] font-semibold uppercase tracking-wider text-zinc-300">{{ card.dateMonth }}</span>
+                  <span class="text-xs font-extrabold leading-none ml-1">{{ card.dateRange }}</span>
+                  <span class="text-[8px] font-medium text-zinc-400 ml-auto">{{ card.year }}</span>
+                </div>
+                <div class="flex justify-between mt-1 border-t border-white/10 pt-1">
+                  <span class="text-[8px] font-semibold text-zinc-400 uppercase tracking-widest">{{ card.city }}</span>
+                  <span class="text-[8px] font-semibold text-zinc-400 uppercase tracking-widest">{{ card.country }}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- ════════════════════════════════════════════════ -->
+  <!-- MOBILE MENU (Full-Width Top Panel Sheet)         -->
+  <!-- ════════════════════════════════════════════════ -->
+  <Teleport to="body">
+    <div v-if="mobileOpen" class="fixed inset-0 z-[100] lg:hidden">
+      <!-- Backdrop -->
+      <div
+        ref="mobileOverlay"
+        class="absolute inset-0 bg-black/20 dark:bg-black/45 backdrop-blur-md"
+        @click="closeMobile"
+      />
+
+      <!-- Slide Down Sheet -->
+      <div
+        ref="mobilePanel"
+        class="absolute top-0 left-0 right-0 bg-white dark:bg-[#000000] border-b border-zinc-200 dark:border-zinc-800 shadow-2xl flex flex-col p-5 max-h-[90vh] overflow-y-auto"
+      >
+        <!-- Mobile Header -->
+        <div class="flex items-center justify-between pb-4 border-b border-zinc-100 dark:border-zinc-900">
+          <AppLogo class="h-4.5 w-auto" />
+          <button class="p-1.5 rounded-md hover:bg-zinc-100 dark:hover:bg-zinc-900 text-zinc-550" @click="closeMobile">
+            <UIcon name="i-lucide-x" class="w-4 h-4" />
+          </button>
+        </div>
+
+        <!-- Search Bar Button -->
+        <div class="py-3">
+          <button
+            class="w-full flex items-center gap-2.5 px-3 py-2 rounded-md bg-zinc-50 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-850 text-left"
+            @click="toggleSearch(); closeMobile();"
+          >
+            <UIcon name="i-lucide-search" class="w-3.5 h-3.5 text-zinc-400" />
+            <span class="text-xs text-zinc-400">Cari informasi product...</span>
+          </button>
+        </div>
+
+        <!-- Interactive Navigation Accordions -->
+        <div class="space-y-1 py-1">
+          <!-- Accordion: Product (termasuk Paket & Harga) -->
+          <div class="border-b border-zinc-100 dark:border-zinc-900">
+            <button
+              class="w-full flex items-center justify-between py-3 text-xs font-semibold tracking-wider uppercase text-zinc-400"
+              @click="toggleMobileSection('product')"
+            >
+              Product
+              <UIcon name="i-lucide-chevron-down" class="w-4 h-4 text-zinc-400 transition-transform duration-200" :class="expandedMobile === 'product' ? 'rotate-180' : ''" />
+            </button>
+            <div v-show="expandedMobile === 'product'" class="pb-3 space-y-2 pl-2">
+              <!-- Services -->
+              <div class="text-[9px] font-bold text-zinc-300 dark:text-zinc-600 uppercase tracking-widest mb-1">Layanan</div>
+              <NuxtLink v-for="item in productLinks.slice(0, 6)" :key="item.label" :to="item.to" class="flex items-center gap-3 py-1 text-xs text-zinc-500 dark:text-zinc-400" @click="closeMobile">
+                <UIcon :name="item.icon" class="w-3.5 h-3.5" /> {{ item.label }}
+              </NuxtLink>
+              <!-- Paket & Harga -->
+              <div class="text-[9px] font-bold text-zinc-300 dark:text-zinc-600 uppercase tracking-widest mt-3 mb-1">Paket & Harga</div>
+              <NuxtLink v-for="item in productLinks.slice(6)" :key="item.label" :to="item.to" class="flex items-center gap-3 py-1 text-xs text-zinc-500 dark:text-zinc-400" @click="closeMobile">
+                <UIcon :name="item.icon" class="w-3.5 h-3.5" /> {{ item.label }}
+              </NuxtLink>
+            </div>
+          </div>
+
+          <!-- Accordion: Resources (3-Column Mobile Layout) -->
+          <div class="border-b border-zinc-100 dark:border-zinc-900">
+            <button
+              class="w-full flex items-center justify-between py-3 text-xs font-semibold tracking-wider uppercase text-zinc-400"
+              @click="toggleMobileSection('resources')"
+            >
+              Resources
+              <UIcon name="i-lucide-chevron-down" class="w-4 h-4 text-zinc-400 transition-transform duration-200" :class="expandedMobile === 'resources' ? 'rotate-180' : ''" />
+            </button>
+            <div v-show="expandedMobile === 'resources'" class="pb-3 space-y-3 pl-2">
+              <!-- Company -->
+              <div>
+                <div class="text-[9px] font-bold text-zinc-300 dark:text-zinc-600 uppercase tracking-widest mb-2">Company</div>
+                <NuxtLink v-for="item in resourcesCompany" :key="item.label" :to="item.to" class="flex items-center gap-3 py-1 text-xs text-zinc-500 dark:text-zinc-400" @click="closeMobile">
+                  <UIcon :name="item.icon" class="w-3.5 h-3.5" /> {{ item.label }}
+                </NuxtLink>
+              </div>
+              <!-- Learn -->
+              <div>
+                <div class="text-[9px] font-bold text-zinc-300 dark:text-zinc-600 uppercase tracking-widest mb-2">Learn</div>
+                <NuxtLink v-for="item in resourcesLearn" :key="item.label" :to="item.to" class="flex items-center gap-3 py-1 text-xs text-zinc-500 dark:text-zinc-400" @click="closeMobile">
+                  <UIcon :name="item.icon" class="w-3.5 h-3.5" /> {{ item.label }}
+                </NuxtLink>
+              </div>
+              <!-- Connect -->
+              <div>
+                <div class="text-[9px] font-bold text-zinc-300 dark:text-zinc-600 uppercase tracking-widest mb-2">Connect</div>
+                <NuxtLink v-for="item in resourcesConnect" :key="item.label" :to="item.to" :target="item.to.startsWith('http') ? '_blank' : undefined" class="flex items-center gap-3 py-1 text-xs text-zinc-500 dark:text-zinc-400" @click="closeMobile">
+                  <UIcon :name="item.icon" :style="item.color ? { color: item.color } : null" class="w-3.5 h-3.5" /> {{ item.label }}
+                </NuxtLink>
+              </div>
+            </div>
+          </div>
+
+          <!-- Accordion: Tentang & Kontak -->
+          <div class="border-b border-zinc-100 dark:border-zinc-900">
+            <button
+              class="w-full flex items-center justify-between py-3 text-xs font-semibold tracking-wider uppercase text-zinc-400"
+              @click="toggleMobileSection('tentang')"
+            >
+              Tentang & Kontak
+              <UIcon name="i-lucide-chevron-down" class="w-4 h-4 text-zinc-400 transition-transform duration-200" :class="expandedMobile === 'tentang' ? 'rotate-180' : ''" />
+            </button>
+            <div v-show="expandedMobile === 'tentang'" class="pb-3 pl-2 space-y-4">
+              <div class="space-y-2">
+                <div v-for="evt in upcomingEvents" :key="evt.title" class="flex items-center gap-2">
+                  <div class="text-[10px] bg-zinc-100 dark:bg-zinc-900 text-zinc-500 px-1 rounded uppercase font-semibold font-mono">{{ evt.day }} {{ evt.month }}</div>
+                  <span class="text-xs text-zinc-500 dark:text-zinc-400 truncate">{{ evt.title }}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Simple Bottom Links -->
+          <NuxtLink to="/partner" class="block py-3 text-xs font-semibold tracking-wider uppercase text-zinc-400 border-b border-zinc-100 dark:border-zinc-900" @click="closeMobile">
+            Partner
+          </NuxtLink>
+        </div>
+
+        <!-- Footer -->
+        <div class="pt-4 flex items-center justify-between text-[11px] text-zinc-400 font-mono">
+          <span>© RakitWeb 2026</span>
+          <UColorModeButton size="xs" />
+        </div>
+      </div>
+    </div>
+  </Teleport>
+</template>
+
+<style scoped>
+/* Seluruh transisi antarmuka menggunakan utilitas Tailwind CSS dan optimalisasi transisi GSAP */
+</style>

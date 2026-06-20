@@ -1,0 +1,97 @@
+{
+  "buildCommand": "pnpm run generate",
+  "outputDirectory": ".output/public",
+  "framework": null,
+  "headers": [
+    {
+      "source": "/_nuxt/(.*)",
+      "headers": [
+        {
+          "key": "cache-control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)\\.(?:js|css|mjs)",
+      "headers": [
+        {
+          "key": "cache-control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)\\.(?:png|jpg|jpeg|gif|webp|avif|svg|ico)",
+      "headers": [
+        {
+          "key": "cache-control",
+          "value": "public, max-age=604800, stale-while-revalidate=2592000"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)\\.(?:woff|woff2|ttf|otf|eot)",
+      "headers": [
+        {
+          "key": "cache-control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/rss.xml",
+      "headers": [
+        {
+          "key": "cache-control",
+          "value": "public, max-age=3600, stale-while-revalidate=86400"
+        }
+      ]
+    },
+    {
+      "source": "/atom.xml",
+      "headers": [
+        {
+          "key": "cache-control",
+          "value": "public, max-age=3600, stale-while-revalidate=86400"
+        }
+      ]
+    },
+    {
+      "source": "/feed.xml",
+      "headers": [
+        {
+          "key": "cache-control",
+          "value": "public, max-age=3600, stale-while-revalidate=86400"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)\\.(?:html|xml|json)",
+      "headers": [
+        {
+          "key": "cache-control",
+          "value": "public, max-age=0, stale-while-revalidate=86400"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "server",                    "value": "nginx/1.24.0 (Ubuntu)" },
+        { "key": "x-powered-by",              "value": "PHP/8.2.12" },
+        { "key": "via",                       "value": "1.1 proxy.rakitweb.id (Varnish/7.4)" },
+        { "key": "x-cache",                   "value": "HIT from proxy.rakitweb.id" },
+        { "key": "x-cache-hits",              "value": "3" },
+        { "key": "x-content-type-options",    "value": "nosniff" },
+        { "key": "x-frame-options",           "value": "SAMEORIGIN" },
+        { "key": "referrer-policy",           "value": "strict-origin-when-cross-origin" },
+        { "key": "permissions-policy",        "value": "camera=(), microphone=(), geolocation=()" },
+        { "key": "strict-transport-security", "value": "max-age=63072000; includeSubDomains; preload" },
+        { "key": "x-robots-tag",              "value": "noai, noimageai" }
+      ]
+    }
+  ],
+  "cleanUrls": true,
+  "trailingSlash": false
+}

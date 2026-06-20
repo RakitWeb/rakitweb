@@ -1,0 +1,31 @@
+# Tailwind CSS Design System y0
+
+This project uses Tailwind CSS for all styling. Follow these principles for a modern, high-quality look:
+
+1. **Modern Aesthetics**:
+   - Use curated color palettes from `@nuxt/ui` (Nuxt UI's primary, neutral/gray, etc.).
+   - Favor glassmorphism effects (`backdrop-blur-md bg-white/10 dark:bg-black/10`).
+   - Use subtle linear gradients (`bg-gradient-to-br from-primary/5 to-transparent`).
+   - Implement smooth hover transitions (`transition-all duration-300 transform hover:scale-105`).
+
+2. **Frame Restrictions**:
+   - ALL content must remain within the border lines defined in the layout.
+   - For vertical borders, we use `max-w-7xl` centered with `mx-auto` and `border-x`.
+   - For horizontal section borders, use `border-b` on each section.
+   - For interactive elements at the edge, handle visibility/visibility-hidden carefully.
+
+3. **Typography**:
+   - Use `@nuxt/ui` and standard Tailwind font classes.
+   - Prefer `font-sans` (Inter/Outfit usually in these templates).
+   - Use `tracking-tight` for large headings for that modern Vercel/Next.js look.
+
+4. **Responsive Design**:
+   - Always implement `mobile-first` approach.
+   - Ensure vertical lines are either hidden or correctly adapted for mobile.
+
+Example Container for Page Content:
+```vue
+<section class="border-b border-border/50 py-24 flex flex-col items-center">
+  <!-- Content here -->
+</section>
+```
