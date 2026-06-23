@@ -78,9 +78,10 @@ export default defineNuxtConfig({
   },
 
   experimental: {
-    // Jangan cache payload di dev mode — mencegah ENOENT error
-    // saat direktori .nuxt/cache/nuxt/payload/ belum terbuat
-    payloadExtraction: false
+    // Payload extraction diperlukan agar @nuxt/content v3 bisa dump
+    // database SQLite-nya saat static prerendering (nuxt generate).
+    // Tanpa ini semua route return 400 dan 0 halaman ter-generate.
+    payloadExtraction: true
   },
 
   nitro: {
