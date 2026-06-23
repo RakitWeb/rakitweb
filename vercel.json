@@ -1,7 +1,11 @@
 {
   "buildCommand": "pnpm run generate",
   "outputDirectory": ".output/public",
+  "installCommand": "pnpm install --frozen-lockfile",
   "framework": null,
+  "env": {
+    "NODE_OPTIONS": "--max-old-space-size=4096"
+  },
   "headers": [
     {
       "source": "/_nuxt/(.*)",
