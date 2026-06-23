@@ -13,7 +13,7 @@
       ]
     },
     {
-      "source": "/(.*)\\.(?:js|css|mjs)",
+      "source": "/(.*)\\.(js|css|mjs)",
       "headers": [
         {
           "key": "cache-control",
@@ -22,7 +22,7 @@
       ]
     },
     {
-      "source": "/(.*)\\.(?:png|jpg|jpeg|gif|webp|avif|svg|ico)",
+      "source": "/(.*)\\.(png|jpg|jpeg|gif|webp|avif|svg|ico)",
       "headers": [
         {
           "key": "cache-control",
@@ -31,7 +31,7 @@
       ]
     },
     {
-      "source": "/(.*)\\.(?:woff|woff2|ttf|otf|eot)",
+      "source": "/(.*)\\.(woff|woff2|ttf|otf|eot)",
       "headers": [
         {
           "key": "cache-control",
@@ -67,7 +67,7 @@
       ]
     },
     {
-      "source": "/(.*)\\.(?:html|xml|json)",
+      "source": "/(.*)\\.(html|xml|json)",
       "headers": [
         {
           "key": "cache-control",
