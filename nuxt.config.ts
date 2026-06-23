@@ -67,12 +67,6 @@ export default defineNuxtConfig({
     // ── Global headers untuk semua route ─────────────────────────
     '/**': {
       headers: {
-        // Fingerprint obfuscation
-        'server': 'nginx/1.24.0 (Ubuntu)',
-        'x-powered-by': 'PHP/8.2.12',
-        'x-cache': 'HIT from proxy.rakitweb.id',
-        'x-cache-hits': '3',
-        'via': '1.1 proxy.rakitweb.id (Varnish/7.4)',
         // Security
         'x-content-type-options': 'nosniff',
         'x-frame-options': 'SAMEORIGIN',
