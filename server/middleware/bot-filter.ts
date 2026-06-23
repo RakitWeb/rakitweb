@@ -86,10 +86,18 @@ export default defineEventHandler((event) => {
   const req = event.node.req
   const url = req.url ?? '/'
 
+  // Skip seluruh middleware saat prerendering — Nitro prerenderer
+  // tidak mengirim User-Agent sehingga akan diblokir oleh cek di bawah.
+  // import.meta.prerender bernilai true hanya saat `nuxt generate`.
+  if (import.meta.prerender) {
+    return
+  }
+
   // Biarkan assets statis lewat tanpa pemrosesan
   if (
     url.startsWith('/_nuxt/') ||
     url.startsWith('/__nuxt_island') ||
+    url.startsWith('/__nuxt_content/') ||
     url.startsWith('/favicon') ||
     url.endsWith('.ico') ||
     url.endsWith('.png') ||
