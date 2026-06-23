@@ -55,7 +55,7 @@
                 <span class="h-2.5 w-2.5 rounded-full bg-zinc-300 dark:bg-zinc-700" />
               </div>
               <div class="rounded bg-zinc-100 px-6 py-0.5 text-[10px] font-mono text-zinc-400 dark:bg-zinc-800 dark:text-zinc-500">
-                remote-sandbox.vercel.run
+                remote-sandbox.rakitweb.net
               </div>
               <div class="w-10"></div>
             </div>

@@ -9,92 +9,77 @@ useSeoMeta({
 
 const team = [
   {
-    name: 'Kin You',
-    role: 'Frontend Enginner',
+    name: 'Kin You (davingm)',
+    role: 'Backend Enginner',
     experience: 'Never Say Never',
-    avatar: './team/Tsumugi.jpg',
+    avatar: 'https://avatars.githubusercontent.com/u/228851591?v=4',
     fallbackAvatar: 'https://ui-avatars.com/api/?name=Rakit+Dev&background=3b82f6&color=fff&size=200&bold=true',
-    bio: 'Membangun produk digital dari nol hingga production. Spesialis web modern dan arsitektur server.',
+    bio: 'Nuxter & Vue Enthusiast. Pengembang aplikasi web yang percaya bahwa development seharusnya intuitif dan menyenangkan.',
     stacks: [
       { name: 'TypeScript', skill: 'ts' },
-      { name: 'Vue.js', skill: 'vue' },
+      { name: 'nestjs', skill: 'nestjs' },
       { name: 'Nuxt.js', skill: 'nuxt' },
-      { name: 'JavaScript', skill: 'js' },
-      { name: 'Next.js', skill: 'nextjs' }
+      
     ]
   },
   {
     name: 'Chandra',
     role: 'Founder of RakitWeb',
-    experience: '2+ tahun pengalaman',
-    avatar: './blog/kucing.jpeg',
+    experience: '',
+    avatar: '/blog/kucing.jpeg',
     fallbackAvatar: 'https://ui-avatars.com/api/?name=Web+Engineer&background=10b981&color=fff&size=200&bold=true',
-    bio: 'Spesialis UI/UX dan performa frontend. Memastikan setiap pixel tampil sempurna di semua perangkat.',
+    bio: 'Mengembangkan sistem backend dan frontend dengan fokus pada performa, stabilitas, dan pengalaman pengguna yang optimal.',
     stacks: [
       { name: 'JavaScript', skill: 'js' },
-      { name: 'Next.js', skill: 'nextjs' },
-      { name: 'React Native', skill: 'react' },
-      { name: 'Angular', skill: 'angular' },
       { name: 'NestJS', skill: 'nestjs' },
-      { name: 'Flutter', skill: 'flutter' }
+      { name: 'TypeScript', skill: 'ts' },
+      { name: 'nodejs', skill: 'nodejs' },
+      { name: 'django', skill: 'django' }
+    ]
+  },
+  {
+    name: 'Akbar',
+    role: 'Co-Founder of RakitWeb',
+    experience: '',
+    avatar: '/team/akbar.png',
+    fallbackAvatar: 'https://ui-avatars.com/api/?name=Backend+Dev&background=8b5cf6&color=fff&size=200&bold=true',
+    bio: 'Merancang arsitektur backend yang scalable dan reliable. Ahli dalam deployment dan optimasi server.',
+    stacks: [
+      { name: 'TypeScript', skill: 'ts' },
+      { name: 'nodejs', skill: 'nodejs' },
+      { name: 'python', skill: 'python' },
+      { name: 'nextjs', skill: 'nextjs' },
     ]
   },
   {
     name: 'Silo Kusuma',
-    role: 'Backend & DevOps Engineer',
-    experience: '2+ tahun pengalaman',
-    avatar: './team/elaina.jpg',
+    role: 'Frontend Developer',
+    experience: '',
+    avatar: '/team/elaina.jpg',
     fallbackAvatar: 'https://ui-avatars.com/api/?name=Backend+Dev&background=8b5cf6&color=fff&size=200&bold=true',
     bio: 'Merancang arsitektur backend yang scalable dan reliable. Ahli dalam deployment dan optimasi server.',
     stacks: [
-      { name: 'Java', skill: 'java' },
-      { name: 'Spring', skill: 'spring' },
-      { name: 'ASP.NET', skill: 'dotnet' },
-      { name: 'Python', skill: 'python' },
-      { name: 'PHP', skill: 'php' },
-      { name: 'TypeScript', skill: 'ts' }
+      { name: 'react', skill: 'react' },
+      { name: 'Next.js', skill: 'nextjs' },
+      { name: 'java', skill: 'java' },
+      { name: 'TypeScript', skill: 'ts' },
+      { name: 'Kotlin', skill: 'kotlin' }
     ]
   },
-  {
-    name: 'Nizam',
-    role: 'CI / CD',
-    experience: '2+ tahun pengalaman',
-    avatar: 'https://avatars.githubusercontent.com/u/webcraftidng?v=4',
-    fallbackAvatar: 'https://ui-avatars.com/api/?name=Backend+Dev&background=8b5cf6&color=fff&size=200&bold=true',
-    bio: 'Merancang arsitektur backend yang scalable dan reliable. Ahli dalam deployment dan optimasi server.',
-    stacks: [
-      { name: 'ASP.NET', skill: 'dotnet' },
-      { name: 'TypeScript', skill: 'ts' }
-    ]
-  },
-  {
-  name: 'Nafi',
-  role: 'UI/UX Designer',
-  experience: '1+ tahun pengalaman',
-  avatar: './team/nafi.jpg',
-  fallbackAvatar: 'https://ui-avatars.com/api/?name=Nafi&background=f59e0b&color=fff&size=200&bold=true',
-  bio: 'Fokus menciptakan tampilan antarmuka yang modern, nyaman digunakan, dan memiliki identitas visual yang kuat.',
-  stacks: [
-    { name: 'Figma', skill: 'figma' },
-    { name: 'Adobe XD', skill: 'xd' },
-    { name: 'TailwindCSS', skill: 'tailwind' },
-    { name: 'Vue.js', skill: 'vue' },
-    { name: 'Nuxt.js', skill: 'nuxt' }
-  ]
-},
 {
-  name: 'Rizal',
-  role: 'Fullstack Developer',
+  name: 'Rifzan',
+  role: 'Frontend Developer',
   experience: '2+ tahun pengalaman',
-  avatar: './team/rizal.jpg',
+  avatar: '/team/rifzan.png',
   fallbackAvatar: 'https://ui-avatars.com/api/?name=Rizal&background=ef4444&color=fff&size=200&bold=true',
-  bio: 'Mengembangkan sistem backend dan frontend dengan fokus pada performa, stabilitas, dan pengalaman pengguna yang optimal.',
+  bio: 'Frontend Engineer | ☕️ & Code | Mengubah desain kompleks menjadi kode yang bersih dan terstruktur. Memiliki minat mendalam pada performa web, desain responsif, dan modernisasi framework seperti React.',
   stacks: [
-    { name: 'Laravel', skill: 'laravel' },
-    { name: 'Node.js', skill: 'nodejs' },
-    { name: 'MySQL', skill: 'mysql' },
-    { name: 'Docker', skill: 'docker' },
-    { name: 'React', skill: 'react' }
+    { name: 'astro', skill: 'astro' },
+    { name: 'react', skill: 'react' },
+    { name: 'svelte', skill: 'svelte' },
+    { name: 'nextjs', skill: 'nextjs' },
+    { name: 'tailwind', skill: 'tailwind' },
+
   ]
 }
 ]
