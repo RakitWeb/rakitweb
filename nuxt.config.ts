@@ -65,18 +65,7 @@ export default defineNuxtConfig({
     },
 
     // ── Global headers untuk semua route ─────────────────────────
-    '/**': {
-      headers: {
-        // Security
-        'x-content-type-options': 'nosniff',
-        'x-frame-options': 'SAMEORIGIN',
-        'referrer-policy': 'strict-origin-when-cross-origin',
-        'permissions-policy': 'camera=(), microphone=(), geolocation=()',
-        'strict-transport-security': 'max-age=63072000; includeSubDomains; preload',
-        // Blokir AI indexer yang mengabaikan robots.txt
-        'x-robots-tag': 'noai, noimageai'
-      }
-    }
+
   },
 
   compatibilityDate: '2024-07-11',
