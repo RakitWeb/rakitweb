@@ -30,7 +30,7 @@ const resourcesLearn = [
   { icon: 'i-lucide-book-open', label: 'Dokumentasi', desc: 'Panduan lengkap RakitWeb', to: '/docs' },
   { icon: 'i-lucide-graduation-cap', label: 'Tutorial', desc: 'Kursus linear untuk upgrade skill', to: '/tutorial' },
   { icon: 'i-lucide-life-buoy', label: 'Pusat Bantuan', desc: 'Temukan jawaban dengan cepat', to: '/bantuan' },
-  { icon: 'i-lucide-users', label: 'Komunitas', desc: 'Bergabung dalam diskusi', to: '/komunitas' }
+  { icon: 'i-lucide-users', label: 'Komunitas', desc: 'Bergabung dalam diskusi', to: 'https://nlfts.dev' }
 ]
 
 const resourcesConnect = [
