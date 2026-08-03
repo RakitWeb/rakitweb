@@ -3,7 +3,7 @@ const colorMode = useColorMode()
 const route = useRoute()
 
 const color = computed(() => colorMode.value === 'dark' ? '#09090b' : 'white')
-const canonicalUrl = computed(() => `https://rakitweb.id${route.path}`)
+const canonicalUrl = computed(() => `https://rakitweb.site${route.path}`)
 
 useHead(() => ({
   meta: [
@@ -26,8 +26,8 @@ useHead(() => ({
     { rel: 'icon', type: 'image/png', href: '/rakitweb.png' },
     { rel: 'canonical', href: canonicalUrl.value },
     // RSS feeds
-    { rel: 'alternate', type: 'application/rss+xml', title: 'RakitWeb Blog RSS', href: 'https://rakitweb.id/rss.xml' },
-    { rel: 'alternate', type: 'application/atom+xml', title: 'RakitWeb Blog Atom', href: 'https://rakitweb.id/atom.xml' },
+    { rel: 'alternate', type: 'application/rss+xml', title: 'RakitWeb Blog RSS', href: 'https://rakitweb.site/rss.xml' },
+    { rel: 'alternate', type: 'application/atom+xml', title: 'RakitWeb Blog Atom', href: 'https://rakitweb.site/atom.xml' },
     // Algolia DocSearch CSS signature (TrapStack)
     { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/@docsearch/css@3/dist/style.css', 'data-trapstack': 'algolia' }
   ],
@@ -40,8 +40,8 @@ useHead(() => ({
         '@context': 'https://schema.org',
         '@type': 'Organization',
         name: 'RakitWeb',
-        url: 'https://rakitweb.id',
-        logo: 'https://rakitweb.id/rakitweb.png',
+        url: 'https://rakitweb.site',
+        logo: 'https://rakitweb.site/rakitweb.png',
         description: 'Jasa pembuatan website, hosting, domain, game server, dan aplikasi Android di Semarang, Indonesia.',
         address: {
           '@type': 'PostalAddress',
@@ -70,12 +70,12 @@ useHead(() => ({
         '@context': 'https://schema.org',
         '@type': 'WebSite',
         name: 'RakitWeb',
-        url: 'https://rakitweb.id',
+        url: 'https://rakitweb.site',
         potentialAction: {
           '@type': 'SearchAction',
           target: {
             '@type': 'EntryPoint',
-            urlTemplate: 'https://rakitweb.id/docs/getting-started?q={search_term_string}'
+            urlTemplate: 'https://rakitweb.site/docs/getting-started?q={search_term_string}'
           },
           'query-input': 'required name=search_term_string'
         }

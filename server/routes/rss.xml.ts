@@ -1,7 +1,7 @@
 import { queryCollection } from '@nuxt/content/server'
 
 export default defineEventHandler(async (event) => {
-  const baseUrl = 'https://rakitweb.id'
+  const baseUrl = 'https://rakitweb.site'
 
   let posts: any[] = []
   try {
@@ -54,8 +54,8 @@ export default defineEventHandler(async (event) => {
     <description>Tips, tutorial, dan info seputar web development, hosting, game server, dan aplikasi Android dari tim RakitWeb.</description>
     <language>id</language>
     <copyright>Copyright ${new Date().getFullYear()} RakitWeb</copyright>
-    <managingEditor>halo@rakitweb.id (RakitWeb)</managingEditor>
-    <webMaster>halo@rakitweb.id (RakitWeb)</webMaster>
+    <managingEditor>halo@rakitweb.site (RakitWeb)</managingEditor>
+    <webMaster>halo@rakitweb.site (RakitWeb)</webMaster>
     <lastBuildDate>${now}</lastBuildDate>
     <ttl>60</ttl>
     <image>

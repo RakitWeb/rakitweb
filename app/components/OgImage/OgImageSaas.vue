@@ -15,7 +15,7 @@ defineProps({
 })
 
 // nuxt-og-image renders server-side via Satori — gunakan URL absolut
-const logoUrl = 'https://rakitweb.id/rakitweb.png'
+const logoUrl = 'https://rakitweb.site/rakitweb.png'
 </script>
 
 <template>

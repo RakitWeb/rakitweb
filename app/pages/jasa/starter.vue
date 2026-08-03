@@ -191,49 +191,58 @@
       </div>
     </section>
 
-    <section class="mx-auto max-w-5xl px-6 pt-4 pb-24">
-      <div class="relative isolate grid grid-cols-1 border border-zinc-200 dark:border-zinc-800 md:grid-cols-3">
-        <div class="absolute -top-[10px] -left-[10px] z-20 flex h-[21px] w-[21px] items-center justify-center select-none pointer-events-none">
-          <div class="absolute h-full w-[2px] bg-zinc-300 dark:bg-zinc-700"></div>
-          <div class="absolute h-[2px] w-full bg-zinc-300 dark:bg-zinc-700"></div>
-        </div>
-        <div class="absolute -bottom-[10px] -right-[10px] z-20 flex h-[21px] w-[21px] items-center justify-center select-none pointer-events-none">
-          <div class="absolute h-full w-[2px] bg-zinc-300 dark:bg-zinc-700"></div>
-          <div class="absolute h-[2px] w-full bg-zinc-300 dark:bg-zinc-700"></div>
-        </div>
-
-        <div class="p-8 md:p-12 md:col-span-2 flex flex-col justify-center bg-white dark:bg-black">
-          <h2 class="text-2xl font-medium tracking-tight sm:text-3xl text-black dark:text-white">
-            Mulai bangun situs statis performa tinggi. <span class="text-zinc-400 dark:text-zinc-500">Estimasi investasi mulai dari.</span><span class="text-indigo-600 dark:text-indigo-400">Rp350rb-750rb</span>
-          </h2>
-          <p class="mt-3 text-sm leading-relaxed text-zinc-500 dark:text-zinc-400 max-w-xl">
-            Sempurna untuk profil korporasi, landing page pemasaran, atau portofolio profesional yang membutuhkan optimasi <span class="text-emerald-500 font-medium">Core Web Vitals</span> sempurna tanpa celah downtime.
-          </p>
-          
-          <div class="mt-8 flex flex-wrap items-center gap-3">
-            <NuxtLink to="/jasa#order-form" class="inline-flex h-10 items-center justify-center rounded-full bg-zinc-900 px-6 text-sm font-medium text-white shadow transition-colors hover:bg-zinc-800 dark:bg-white dark:text-black dark:hover:bg-zinc-200">
-              Kirim Proposal / Brief
-            </NuxtLink>
-            <a href="https://wa.me/628123456789" target="_blank" class="inline-flex h-10 items-center justify-center rounded-full border border-zinc-200 px-6 text-sm font-medium text-zinc-900 transition-colors hover:bg-zinc-50 dark:border-zinc-800 dark:text-zinc-300 dark:hover:bg-zinc-900/50">
-              Konsultasi WhatsApp
-            </a>
+    <TablesGetMoreStarter />
+    <TablesStarterPackage />
+    
+        <section class="mx-auto max-w-5xl px-6 pt-29 pb-29">
+          <div class="relative isolate grid grid-cols-1 border border-zinc-200 dark:border-zinc-800 md:grid-cols-3">
+            <div class="absolute -top-[10px] -left-[10px] z-20 flex h-[21px] w-[21px] items-center justify-center select-none pointer-events-none">
+              <div class="absolute h-full w-[2px] bg-zinc-300 dark:bg-zinc-700"></div>
+              <div class="absolute h-[2px] w-full bg-zinc-300 dark:bg-zinc-700"></div>
+            </div>
+            <div class="absolute -bottom-[10px] -right-[10px] z-20 flex h-[21px] w-[21px] items-center justify-center select-none pointer-events-none">
+              <div class="absolute h-full w-[2px] bg-zinc-300 dark:bg-zinc-700"></div>
+              <div class="absolute h-[2px] w-full bg-zinc-300 dark:bg-zinc-700"></div>
+            </div>
+    
+            <div class="p-8 md:p-12 md:col-span-2 flex flex-col justify-center bg-white dark:bg-black">
+              <h2 class="text-2xl font-medium tracking-tight sm:t9ext-3xl text-black dark:text-white">
+                Mulai bangun situs statis performa tinggi. <span class="text-zinc-400 dark:text-zinc-500">Estimasi investasi mulai dari.</span><span class="text-indigo-600 dark:text-indigo-400">Rp350rb-750rb</span>
+              </h2>
+              <p class="mt-3 text-sm leading-relaxed text-zinc-500 dark:text-zinc-400 max-w-xl">
+                Sempurna untuk profil korporasi, landing page pemasaran, atau portofolio profesional yang membutuhkan optimasi <span class="text-emerald-500 font-medium">Core Web Vitals</span> sempurna tanpa celah downtime.
+              </p>
+              
+              <div class="mt-8 flex flex-wrap items-center gap-3">
+                <NuxtLink to="/jasa#order-form" class="inline-flex h-10 items-center justify-center rounded-full bg-zinc-900 px-6 text-sm font-medium text-white shadow transition-colors hover:bg-zinc-800 dark:bg-white dark:text-black dark:hover:bg-zinc-200">
+                  Kirim Proposal / Brief
+                </NuxtLink>
+                <a
+                  href="https://wa.me/628123456789?text=Halo%20Rakitweb%2C%0A%0ASaya%20tertarik%20untuk%20menggunakan%20layanan%20pembuatan%20website%20Starter.%20Saya%20ingin%20berkonsultasi%20mengenai%20kebutuhan%20website%2C%20fitur%20yang%20tersedia%2C%20estimasi%20biaya%2C%20serta%20proses%20pengerjaannya.%0A%0AMohon%20informasi%20lebih%20lanjut.%20Terima%20kasih."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex h-10 items-center justify-center rounded-full border border-zinc-200 px-6 text-sm font-medium text-zinc-900 transition-colors hover:bg-zinc-50 dark:border-zinc-800 dark:text-zinc-300 dark:hover:bg-zinc-900/50"
+                >
+                  Konsultasi WhatsApp
+                </a>
+              </div>
+            </div>
+    
+            <div class="p-8 border-t md:border-t-0 md:border-l border-zinc-200 dark:border-zinc-800 bg-white dark:bg-black flex flex-col justify-between">
+              <div>
+                <h3 class="text-sm font-medium text-black dark:text-white">
+                  Butuh Pengelolaan Konten Mandiri? <span class="text-zinc-400 font-normal">Situs statis kami dapat dikoneksikan ke Headless CMS seperti Sanity, Strapi, atau Nuxt Content untuk manajemen mandiri yang mudah.</span>
+                </h3>
+              </div>
+              <div class="pt-8">
+                <NuxtLink to="/jasa" class="inline-flex h-10 w-full sm:w-auto items-center justify-center rounded-md border border-zinc-200 px-4 text-xs font-medium text-black transition-colors hover:bg-zinc-50 dark:border-zinc-800 dark:text-white dark:hover:bg-zinc-900">
+                  Lihat Opsi Layanan Lain
+                </NuxtLink>
+              </div>
+            </div>
           </div>
-        </div>
-
-        <div class="p-8 border-t md:border-t-0 md:border-l border-zinc-200 dark:border-zinc-800 bg-white dark:bg-black flex flex-col justify-between">
-          <div>
-            <h3 class="text-sm font-medium text-black dark:text-white">
-              Butuh Pengelolaan Konten Mandiri? <span class="text-zinc-400 font-normal">Situs statis kami dapat dikoneksikan ke Headless CMS seperti Sanity, Strapi, atau Nuxt Content untuk manajemen mandiri yang mudah.</span>
-            </h3>
-          </div>
-          <div class="pt-8">
-            <NuxtLink to="/jasa" class="inline-flex h-10 w-full sm:w-auto items-center justify-center rounded-md border border-zinc-200 px-4 text-xs font-medium text-black transition-colors hover:bg-zinc-50 dark:border-zinc-800 dark:text-white dark:hover:bg-zinc-900">
-              Lihat Opsi Layanan Lain
-            </NuxtLink>
-          </div>
-        </div>
-      </div>
-    </section>
+        </section>
+    
   </main>
 </template>
 

@@ -1,7 +1,7 @@
 import { queryCollection } from '@nuxt/content/server'
 
 export default defineEventHandler(async (event) => {
-  const baseUrl = 'https://rakitweb.id'
+  const baseUrl = 'https://rakitweb.site'
 
   let posts: any[] = []
   try {
@@ -42,7 +42,7 @@ export default defineEventHandler(async (event) => {
   <link rel="self" href="${baseUrl}/atom.xml" type="application/atom+xml"/>
   <id>${baseUrl}/</id>
   <updated>${updated}</updated>
-  <author><name>RakitWeb</name><email>halo@rakitweb.id</email></author>
+  <author><name>RakitWeb</name><email>halo@rakitweb.site</email></author>
   <icon>${baseUrl}/rakitweb.png</icon>
   ${entries}
 </feed>`

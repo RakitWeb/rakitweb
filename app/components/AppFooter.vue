@@ -1,235 +1,164 @@
 <script setup lang="ts">
-import gsap from 'gsap'
-
 const columns = [
   {
     label: 'Layanan',
     children: [
-      { label: 'Website Company Profile' },
-      { label: 'Landing Page' },
-      { label: 'Toko Online' },
-      { label: 'SEO Optimization' }
-    ]
+      { label: 'Layanan Pembuatan Situs', to: '/jasa' },
+      { label: 'Paket Android', to: '/pricing-android' },
+      { label: 'Template Starter', to:'/template' }
+    ],
   },
   {
-    label: 'Server & Hosting',
+    label: 'Paket & Sumber Daya',
     children: [
-      { label: 'Setup Hosting & Domain' },
-      { label: 'Game Server' },
-      { label: 'Instalasi Panel' },
-      { label: 'Maintenance & Support' }
-    ]
+      { label: 'Paket Starter', to: '/jasa/starter' },
+      { label: 'Paket Pro', to: '/jasa/pro' },
+      { label: 'Paket Bisnis', to: '/jasa/business' },
+      { label: 'Setup Hosting', to:'/jasa/hosting' },
+    ],
   },
   {
     label: 'Perusahaan',
     children: [
       { label: 'Tentang Kami', to: '/about' },
-      { label: 'Portofolio' },
-      { label: 'Blog & Info' },
-      { label: 'Kontak' }
-    ]
+      { label: 'Blog & Info', to: '/blog' },
+      { label: 'Karir', to:'karir' },
+      { label: 'Testimoni', to: '/testimoni' },
+      { label: 'Dokumentasi', to: '/docs' },
+      { label: 'Komunitas', to: 'https://nlfts.dev' },
+      { label: 'Changelog', to: '/changelog' },
+      { label: 'Partner', to: '/partner' },
+      { label: 'Team', to: '/team' }
+    ],
   },
   {
     label: 'Legal',
     children: [
-      { label: 'Kebijakan Privasi', to: '/privacy-policy' },
-      { label: 'Syarat & Ketentuan' },
-      { label: 'FAQ' },
-      { label: 'Dukungan' }
-    ]
-  }
+      { label: 'Kebijakan Privasi', to: '/docs/getting-started/kebijakan-dan-privasi' },
+      { label: 'Syarat & Ketentuan', to: '/docs/getting-started/tos' },
+      { label: 'FAQ', to: '/#faq' },
+      { label: 'Dukungan' },
+    ],
+  },
+]
+
+const contactInfo = [
+  { label: 'Email', value: 'go@rakitweb.site' },
+  { label: 'WhatsApp', value: '+62 831-6032-5595' },
+  { label: 'Alamat', value: 'Bandung . Indonesia' },
 ]
 
 const socialLinks = [
   { icon: 'i-simple-icons-github', to: 'https://github.com/RakitWeb', label: 'GitHub' },
-  { icon: 'i-simple-icons-instagram', to: 'https://www.instagram.com/rakitweb_id', label: 'Instagram' },
+  { icon: 'i-simple-icons-instagram', to: 'https://www.instagram.com/rakitweb.site', label: 'Instagram' },
   { icon: 'i-simple-icons-whatsapp', to: 'https://wa.me/6283160325595', label: 'WhatsApp' },
-  { icon: 'i-simple-icons-tiktok', to: 'https://www.tiktok.com/@webcraftidng', label: 'TikTok' }
+  { icon: 'i-simple-icons-tiktok', to: 'https://www.tiktok.com/@rakitweb.site', label: 'TikTok' },
 ]
 
-// Elite Magnetic Link Effect
-const onLinkEnter = (e: MouseEvent) => {
-  const el = e.currentTarget as HTMLElement
-  const underline = el.querySelector(".link-line")
-  const aura = el.querySelector(".link-aura")
-  
-  gsap.to(el, {
-    x: 8,
-    scale: 1.05,
-    color: '#10B981',
-    duration: 0.5,
-    ease: "elastic.out(1, 0.5)"
-  })
-
-  if (underline) {
-    gsap.to(underline, {
-      scaleX: 1,
-      opacity: 1,
-      duration: 0.6,
-      ease: "power4.out"
-    })
-  }
-
-  if (aura) {
-    gsap.to(aura, {
-      opacity: 0.1,
-      scale: 1,
-      duration: 0.4
-    })
-  }
-}
-
-const onLinkLeave = (e: MouseEvent) => {
-  const el = e.currentTarget as HTMLElement
-  const underline = el.querySelector(".link-line")
-  const aura = el.querySelector(".link-aura")
-
-  gsap.to(el, {
-    x: 0,
-    scale: 1,
-    color: '#6B7280',
-    duration: 0.8,
-    ease: "elastic.out(1, 0.3)"
-  })
-
-  if (underline) {
-    gsap.to(underline, {
-      scaleX: 0,
-      opacity: 0,
-      duration: 0.4
-    })
-  }
-
-  if (aura) {
-    gsap.to(aura, {
-      opacity: 0,
-      scale: 0.5,
-      duration: 0.4
-    })
-  }
-}
-
-// Magnetic Social Pull
-const onSocialMove = (e: MouseEvent) => {
-  const el = e.currentTarget as HTMLElement
-  const rect = el.getBoundingClientRect()
-  const mouseX = e.clientX - rect.left - rect.width / 2
-  const mouseY = e.clientY - rect.top - rect.height / 2
-  
-  gsap.to(el, {
-    x: mouseX * 0.4,
-    y: mouseY * 0.4,
-    scale: 1.2,
-    color: '#10B981',
-    duration: 0.3,
-    ease: "power2.out"
-  })
-}
-
-const onSocialLeave = (e: MouseEvent) => {
-  gsap.to(e.currentTarget, {
-    x: 0,
-    y: 0,
-    scale: 1,
-    color: '#9CA3AF',
-    duration: 0.6,
-    ease: "elastic.out(1, 0.3)"
-  })
-}
-
-// Giant Text Parallax
-const onGiantMove = (e: MouseEvent) => {
-  const el = document.querySelector(".giant-branding")
-  if (!el) return
-  const xPercent = (e.clientX / window.innerWidth - 0.5) * 10
-  const yPercent = (e.clientY / window.innerHeight - 0.5) * 5
-  gsap.to(el, {
-    xPercent,
-    yPercent,
-    duration: 1,
-    ease: "power2.out"
-  })
-}
+const legalLinks = [
+  { label: 'Kebijakan Privasi', to: '/docs/getting-started/kebijakan-dan-privasi' },
+  { label: 'Syarat & Ketentuan', to: '/docs/getting-started/tos' },
+  { label: 'Sitemap', to: '/sitemap.xml', external: true },
+]
 </script>
 
 <template>
-    <footer 
-    class="bg-white dark:bg-[#09090b] pt-24 pb-12 overflow-hidden border-t border-zinc-200/80 dark:border-zinc-800"
-    @mousemove="onGiantMove"
-  >
+  <footer class="relative bg-white dark:bg-black text-neutral-900 dark:text-neutral-100 border-t border-neutral-200 dark:border-neutral-800">
+
+    <!-- corner marks -->
+    <span class="hidden md:block absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2 w-2 h-2 border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-black" />
+    <span class="hidden md:block absolute top-0 right-0 translate-x-1/2 -translate-y-1/2 w-2 h-2 border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-black" />
+
     <UContainer>
-      <!-- TOP GRID -->
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-24 relative z-20">
-        <!-- BRANDING SIDE -->
-        <div class="lg:col-span-4 space-y-8">
-          <div class="flex items-center gap-2">
-            <span class="text-2xl font-black tracking-tight text-gray-900 dark:text-white">Rakit<span class="text-primary-500">Web</span></span>
-          </div>
-          
-          <p class="text-xs tracking-[0.3em] text-primary-500 leading-loose max-w-[280px] opacity-70">
-            Solusi digital terbaik untuk bisnis masa depan — website, hosting, android & game server.
+      <!-- ===== TOP: brand + nav columns ===== -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 py-16 md:py-20">
+
+        <!-- Brand & contact -->
+        <div class="lg:col-span-4 space-y-6">
+          <span class="text-lg font-semibold tracking-tight text-neutral-900 dark:text-white">
+            Rakit<span class="text-blue-500">Web</span>
+          </span>
+
+          <p class="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed max-w-xs">
+            Solusi digital untuk bisnis Anda — website, hosting, aplikasi, dan
+            server, dikerjakan oleh tim yang berpengalaman.
           </p>
 
-          <div class="flex items-center gap-8">
-            <NuxtLink 
-              v-for="social in socialLinks" 
+          <ul class="space-y-2 text-sm">
+            <li
+              v-for="item in contactInfo"
+              :key="item.label"
+              class="flex items-center gap-2 text-neutral-500 dark:text-neutral-400"
+            >
+              <span class="text-neutral-400 dark:text-neutral-600 w-16 shrink-0">{{ item.label }}</span>
+              <span class="text-neutral-700 dark:text-neutral-300">{{ item.value }}</span>
+            </li>
+          </ul>
+
+          <div class="flex items-center gap-3 pt-2">
+            <NuxtLink
+              v-for="social in socialLinks"
               :key="social.label"
               :to="social.to"
               target="_blank"
-              class="text-gray-400 dark:hover:text-white transition-colors relative p-2"
-              @mousemove="onSocialMove"
-              @mouseleave="onSocialLeave"
+              :aria-label="social.label"
+              class="flex items-center justify-center w-8 h-8 rounded-full border border-neutral-200 dark:border-neutral-800 text-neutral-500 dark:text-neutral-400 hover:text-white hover:bg-neutral-900 dark:hover:bg-white dark:hover:text-black hover:border-neutral-900 dark:hover:border-white transition-colors"
             >
-              <UIcon :name="social.icon" class="w-6 h-6 shrink-0 z-10 relative" />
-              <div class="absolute inset-0 bg-primary-500/10 rounded-full scale-0 group-hover:scale-100 transition-transform duration-300" />
+              <UIcon :name="social.icon" class="w-4 h-4" />
             </NuxtLink>
-          </div>
-
-          <div class="flex items-center gap-8 text-[9px] font-black uppercase tracking-[0.4em] text-gray-400">
-            <span>© {{ new Date().getFullYear() }}</span>
-            <NuxtLink to="#" class="hover:text-primary-500 transition-colors">Legal</NuxtLink>
-            <NuxtLink to="#" class="hover:text-primary-500 transition-colors">Status</NuxtLink>
           </div>
         </div>
 
-        <!-- LINKS SIDE -->
-        <div class="lg:col-span-8 grid grid-cols-2 md:grid-cols-4 gap-12">
-          <div v-for="col in columns" :key="col.label" class="space-y-6">
-            <h3 class="text-[10px] font-black uppercase tracking-[0.4em] text-gray-900 dark:text-white opacity-20">{{ col.label }}</h3>
-            <ul class="space-y-4">
+        <!-- Nav columns -->
+        <div class="lg:col-span-8 grid grid-cols-2 md:grid-cols-4 gap-10">
+          <div v-for="col in columns" :key="col.label">
+            <h3 class="text-xs font-semibold uppercase tracking-wider text-neutral-400 dark:text-neutral-600 mb-4">
+              {{ col.label }}
+            </h3>
+            <ul class="space-y-3">
               <li v-for="link in col.children" :key="link.label">
-                <NuxtLink 
+                <NuxtLink
                   :to="link.to || '#'"
-                  class="relative inline-flex flex-col items-start text-[13px] font-bold text-gray-500 dark:text-gray-400 cursor-pointer group"
-                  @mouseenter="onLinkEnter"
-                  @mouseleave="onLinkLeave"
+                  class="text-sm text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors"
                 >
-                  <div class="link-aura absolute inset-x-[-12px] inset-y-[-4px] bg-primary-500/20 rounded-lg blur-md opacity-0 scale-50 pointer-events-none" />
-                  <span class="relative z-10">{{ link.label }}</span>
-                  <div class="link-line w-full h-[1.5px] bg-primary-500 mt-1 opacity-0 scale-x-0 origin-center" />
+                  {{ link.label }}
                 </NuxtLink>
               </li>
             </ul>
           </div>
         </div>
-
       </div>
 
-      <!-- GIANT BRANDING TEXT -->
-      <div class="giant-branding relative mt-24 select-none pointer-events-none">
-        <h1 class="text-[clamp(80px,25vw,400px)] font-[1000] leading-none tracking-[-0.08em] uppercase whitespace-nowrap -mb-[0.2em] transform-gpu">
-          <span class="text-gray-900 dark:text-white">Rakit</span><span class="text-primary-500">Web</span>
-        </h1>
+      <!-- ===== BOTTOM: copyright + legal ===== -->
+      <div class="border-t border-neutral-200 dark:border-neutral-800 py-6 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-neutral-400 dark:text-neutral-600">
+        <span>© {{ new Date().getFullYear() }} RakitWeb. Seluruh hak cipta dilindungi.</span>
+
+        <div class="flex items-center gap-6">
+          <template v-for="link in legalLinks" :key="link.label">
+            <NuxtLink
+              v-if="!link.external"
+              :to="link.to"
+              class="hover:text-neutral-900 dark:hover:text-white transition-colors"
+            >
+              {{ link.label }}
+            </NuxtLink>
+
+            <a
+              v-else
+              :href="link.to"
+              class="hover:text-neutral-900 dark:hover:text-white transition-colors"
+            >
+              {{ link.label }}
+            </a>
+          </template>
+          
+          <UColorModeButton size="sm" class="cursor-pointer text-zinc-500 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-zinc-50 bg-transparent hover:bg-zinc-100 dark:hover:bg-zinc-900 border-none shadow-none" />
+        
+        </div>
       </div>
     </UContainer>
   </footer>
 </template>
-
-<style scoped>
-footer {
-  font-feature-settings: "cv11", "ss01", "cv01";
-}
-</style>
 
 <style scoped>
 footer {

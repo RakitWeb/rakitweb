@@ -184,7 +184,7 @@ const services = [
     description: 'Situs representasi bisnis dengan arsitektur SSG (Static Site Generation). Memiliki kecepatan muat sekejap mata, keandalan server tinggi, dan ramah SEO.',
     features: ['Nuxt / Next Arsitektur', 'Integrasi Headless CMS', 'Optimasi Gambar Otomatis', 'Skor Performa Core Web Vitals 95+'],
     timeline: '2 - 3 Minggu',
-    link: '/jasa/situs-statis' // Target Halaman Baru
+    link: '/jasa/starter' // Target Halaman Baru
   },
   {
     id: 2,
@@ -193,7 +193,7 @@ const services = [
     description: 'Sistem aplikasi berbasis web yang dinamis untuk kebutuhan operasional spesifik, dasbor internal, sistem manajemen data, atau portal SaaS.',
     features: ['Arsitektur API Terstruktur', 'Sistem Autentikasi Amalan Terbaik', 'Real-time Data Syncing', 'Manajemen State Kompleks'],
     timeline: '4 - 8 Minggu',
-    link: '/jasa/aplikasi-web'
+    link: '/jasa/pro'
   },
   {
     id: 3,
@@ -202,7 +202,7 @@ const services = [
     description: 'Toko online modern dengan pemisahan frontend dan backend. Memungkinkan checkout super cepat, kebebasan kustomisasi desain UI, serta manajemen katalog yang lincah.',
     features: ['Integrasi Payment Gateway', 'Sistem Keranjang & Inventori', 'Keamanan Transaksi Tinggi', 'Dasbor Analitik Penjualan'],
     timeline: '5 - 9 Minggu',
-    link: '/jasa/perniagaan'
+    link: '/jasa/business'
   }
 ]
 

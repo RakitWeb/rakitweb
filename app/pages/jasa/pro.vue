@@ -56,19 +56,19 @@
           <div class="flex flex-col justify-between h-full z-10 w-44 relative">
             <div class="flex items-center gap-3 rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-black px-4 h-11 text-xs font-mono text-zinc-800 dark:text-zinc-300 shadow-sm">
               <UIcon name="i-simple-icons-nestjs" class="h-4 w-4 shrink-0" style="color: #E0234E;" />
-              <span>Arsitektur API</span>
+              <span>Backend pipeline</span>
             </div>
             <div class="flex items-center gap-3 rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-black px-4 h-11 text-xs font-mono text-zinc-800 dark:text-zinc-300 shadow-sm">
               <UIcon name="i-simple-icons-nuxtdotjs" class="h-4 w-4 shrink-0" style="color: #00DC82;" />
-              <span>Autentikasi Aman</span>
+              <span>Frontend Moderen</span>
             </div>
             <div class="flex items-center gap-3 rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-black px-4 h-11 text-xs font-mono text-zinc-800 dark:text-zinc-300 shadow-sm">
               <UIcon name="i-simple-icons-flutter" class="h-4 w-4 shrink-0" style="color: #02569B;" />
-              <span>Real-time Sync</span>
+              <span>Mobile first</span>
             </div>
             <div class="flex items-center gap-3 rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-black px-4 h-11 text-xs font-mono text-zinc-800 dark:text-zinc-300 shadow-sm">
               <UIcon name="i-simple-icons-github" class="h-4 w-4 shrink-0 text-zinc-950 dark:text-white" />
-              <span>Manajemen State</span>
+              <span>CI/CD</span>
             </div>
           </div>
 
@@ -102,6 +102,10 @@
         </div>
       </div>
     </section>
+    
+    <TablesGetMorePro />
+    
+    <TablesProPackage />
 
     <section class="relative mx-auto max-w-7xl px-6 py-24">
       <div class="absolute -bottom-[14px] right-4 text-zinc-400 dark:text-zinc-700 font-light text-xl select-none">+</div>

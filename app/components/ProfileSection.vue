@@ -73,14 +73,16 @@ onMounted(async () => {
 <template>
   <section 
     ref="sectionRef" 
-    class="py-32 border-b border-gray-100 dark:border-white/5 bg-white dark:bg-[#09090b] overflow-hidden"
+    class="relative py-32 border-b border-gray-100 dark:border-white/5 bg-white dark:bg-black"
   >
-    <div class="max-w-7xl mx-auto px-8">
+    <!-- corner marks bottom -->
+    <span class="hidden md:block absolute bottom-0 left-0 -translate-x-1/2 translate-y-1/2 w-2 h-2 border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-black z-10" />
+    <span class="hidden md:block absolute bottom-0 right-0 translate-x-1/2 translate-y-1/2 w-2 h-2 border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-black z-10" />
+    <div class="relative max-w-7xl mx-auto px-8">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-start">
-        
         <div class="lg:col-span-5 space-y-8">
           <div class="reveal flex flex-col space-y-4">
-            <span class="text-[10px] font-bold uppercase tracking-[0.3em] text-primary-500">Layanan Kami</span>
+            <span class="text-20px] font-normal text-primary-500">Layanan Kami</span>
             <h2 class="text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white leading-tight">
               Solusi Digital Lengkap <br class="hidden md:block"/> untuk Bisnis Anda.
             </h2>
@@ -123,13 +125,13 @@ onMounted(async () => {
             </p>
           </div>
           
-          <div class="reveal group p-8 bg-gray-50/50 dark:bg-white/[0.02] border border-gray-100 dark:border-white/5 rounded-sm flex flex-col justify-between hover:bg-white dark:hover:bg-white/[0.05] transition-all duration-700">
-            <h4 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Lihat Semua Paket & Harga</h4>
-            <div class="flex items-center justify-between">
-              <p class="text-sm font-bold text-gray-900 dark:text-white">Pricing →</p>
-              <UIcon name="i-lucide-external-link" class="w-4 h-4 text-primary-500 opacity-0 group-hover:opacity-100 transition-all transform translate-y-2 group-hover:translate-y-0" />
-            </div>
-          </div>
+          <NuxtLink to="/jasa" class="reveal hover:cursor-pointer group p-8 bg-green-400 dark:bg-indigo-600 border border-gray-100 dark:border-white/5 rounded-sm flex flex-col justify-between hover:bg-white dark:hover:bg-white/[0.05] transition-all duration-700">
+              <h4 class="text-xs font-bold uppercase tracking-widest mb-4">Lihat Semua Paket & Harga</h4>
+              <div class="flex items-center justify-between">
+                <p class="text-sm font-bold text-gray-900 dark:text-white">Pricing →</p>
+                <UIcon name="i-lucide-external-link" class="w-4 h-4 text-primary-500 opacity-0 group-hover:opacity-100 transition-all transform translate-y-2 group-hover:translate-y-0" />
+              </div>
+          </NuxtLink>
         </div>
 
       </div>
