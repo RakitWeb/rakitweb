@@ -84,6 +84,17 @@ export default defineNuxtConfig({
     payloadExtraction: true
   },
 
+  $development: {
+    // Di dev mode, matikan payload cache ke disk agar tidak error ENOENT
+    // saat unstorage mencoba menulis ke subdirektori yang belum ada.
+    // payloadExtraction tetap true untuk production/generate.
+    nitro: {
+      storage: {
+        'cache:nuxt:payload': { driver: 'memory' }
+      }
+    }
+  },
+
   nitro: {
     prerender: {
       // Seed awal — Nitro akan temukan semua route lain lewat crawl

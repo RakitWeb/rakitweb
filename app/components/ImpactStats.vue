@@ -66,7 +66,10 @@ onMounted(() => {
 </script>
 
 <template>
-  <div ref="statsContainer" class="w-full bg-white dark:bg-[#09090b] border-b border-gray-100 dark:border-white/5 py-20">
+  <div ref="statsContainer" class="relative w-full bg-white dark:bg-black border-b border-gray-100 dark:border-white/5 py-20">
+    <!-- corner marks bottom -->
+    <span class="hidden md:block absolute bottom-0 left-0 -translate-x-1/2 translate-y-1/2 w-2 h-2 border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-black z-10" />
+    <span class="hidden md:block absolute bottom-0 right-0 translate-x-1/2 translate-y-1/2 w-2 h-2 border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-black z-10" />
     <div class="max-w-7xl mx-auto px-6">
       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-12">
         <div 
@@ -80,7 +83,7 @@ onMounted(() => {
           >
             {{ stat.value }}
           </span>
-          <span class="mt-2 text-xs font-bold uppercase tracking-widest text-gray-400 group-hover:text-gray-600 dark:group-hover:text-gray-300 transition-colors duration-300">
+          <span class="font-normal mt-2 text-xs font-bold uppercase tracking-widest text-gray-400 group-hover:text-gray-600 dark:group-hover:text-gray-300 transition-colors duration-300">
             {{ stat.label }}
           </span>
           <div class="mt-4 w-6 h-[2px] bg-gray-100 dark:bg-white/10 group-hover:w-10 group-hover:bg-primary-500 transition-all duration-500" />

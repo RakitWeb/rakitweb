@@ -4,22 +4,19 @@ import gsap from 'gsap'
 
 // ── Navigation Data ────────────────────────────────────────────
 const productLinks = [
+  { icon: 'i-lucide-rocket', label: 'Paket Website Starter', desc: '5-10 halaman + hosting + domain, Rp350rb-750rb.', to: '/jasa/starter' },
   { icon: 'i-lucide-globe', label: 'Jasa Pembuatan Website', desc: 'Company profile, landing page, toko online.', to: '/jasa' },
-  { icon: 'i-lucide-server', label: 'Hosting', desc: 'Setup, migrasi, dan konfigurasi server.', to: '/jasa/hosting' },
   { icon: 'i-simple-icons-nuxtdotjs', label: 'Nuxtjs', desc: 'Framework Vue super cepat untuk web modern.', to: '/template/nuxtjs', color: '#00DC82' },
-  { icon: 'i-lucide-smartphone', label: 'Aplikasi Android', desc: 'Pembuatan aplikasi Android custom.', to: '/#product' },
-  { icon: 'i-lucide-gamepad-2', label: 'Game Server', desc: 'Minecraft, CS:GO, GTA, dan lainnya.', to: '/#product' },
   { icon: 'i-simple-icons-nestjs', label: 'Nestjs', desc: 'Backend Node.js yang scalable & enterprise-grade.', to: '/#product', color: '#E0234E' },
-  // ── Paket & Harga (dipindahkan ke sini dari menu Paket Harga) ──
-  { icon: 'i-lucide-rocket', label: 'Paket Website Starter', desc: '5-10 halaman + hosting + domain, Rp350rb-750rb.', to: '/jasa/situs-statis' },
-  { icon: 'i-lucide-star', label: 'Paket Website Pro', desc: 'Custom + SEO + maintenance 3 bulan, Rp1,5jt-4jt.', to: '/jasa/aplikasi-web' },
-  { icon: 'i-lucide-server', label: 'Paket Game Server', desc: 'Panel + config + maintenance, Rp200rb-800rb/bulan.', to: '/pricing' },
-  { icon: 'i-lucide-smartphone', label: 'Paket Android', desc: 'Aplikasi POS & kasir, Rp500rb/bulan.', to: '/pricing-android' }
+  { icon: 'i-lucide-star', label: 'Paket Website Pro', desc: 'Custom + SEO + maintenance 3 bulan, Rp1,5jt-4jt.', to: '/jasa/pro' },
+  { icon: 'i-lucide-smartphone', label: 'Paket Android', desc: 'Aplikasi POS & kasir, Rp500rb/bulan.', to: '/pricing-android' },
+  // Hosting
+  { icon: 'i-lucide-server', label: 'Web Hosting', desc: 'Web hosting super cepat untuk web modern.', to: '/jasa/hosting' },
 ]
 
 // ── Resources Data (3-Column Vercel-Style) ─────────────────────
 const resourcesCompany = [
-  { icon: 'i-lucide-smile', label: 'Klien Kami', desc: 'Dipercaya tim terbaik', to: '/klien' },
+  { icon: 'i-lucide-smile', label: 'tentang Kami', desc: 'Dipercaya tim terbaik', to: '/about' },
   { icon: 'i-lucide-pen-line', label: 'Blog & Artikel', desc: 'Tulisan & perubahan terbaru', to: '/blog' },
   { icon: 'i-lucide-file-text', label: 'Changelog', desc: 'Lihat yang baru saja rilis', to: '/changelog' },
   { icon: 'i-lucide-briefcase', label: 'Testimoni', desc: 'Baca ulasan dari klien', to: '/testimoni' },

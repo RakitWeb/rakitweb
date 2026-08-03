@@ -1,6 +1,6 @@
 # ============================================================
 # RakitWeb — robots.txt
-# https://rakitweb.id
+# https://rakitweb.site
 # ============================================================
 
 # ── Default: izinkan search engine utama ────────────────────
@@ -199,5 +199,5 @@ User-agent: TechnographyScraper
 Disallow: /
 
 # ── Sitemap ──────────────────────────────────────────────────
-Sitemap: https://rakitweb.id/sitemap.xml
-Sitemap: https://rakitweb.id/sitemap-blog.xml
+Sitemap: https://rakitweb.site/sitemap.xml
+Sitemap: https://rakitweb.site/sitemap-blog.xml
