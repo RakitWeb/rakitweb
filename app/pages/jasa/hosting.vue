@@ -1261,13 +1261,13 @@ const providers = [
     "rating": "4.2",
     "freeAvailable": false,
     "startingPrice": "$10/bulan",
-    "desc": "Server management tool yang menyederhanakan deployment dan manajemen VPS. Alternatif untuk Cloudways dan RunCloud, dengan dukungan lebih dari sekadar PHP dan WordPress.",
+    "desc": "Server management tool yang menyederhanakan deployment dan manajemen VPS. Alternatif untuk Cloudways dan RunCloud, dengan dukungan PHP, Laravel, dan Node.js.",
     "plans": [
       {
         "name": "Basic",
         "price": "$10/bulan",
         "popular": true,
-        "highlight": "Manajemen server dasar, deploy PHP, Laravel, WordPress, Node.js."
+        "highlight": "Manajemen server dasar, deploy PHP, Laravel, dan Node.js."
       },
       {
         "name": "Pro",
@@ -1293,7 +1293,7 @@ const providers = [
       }
     ],
     "pros": [
-      "Mendukung lebih dari sekadar PHP dan WordPress (Node.js, Python AI/ML)",
+      "Mendukung PHP, Node.js, dan Python untuk AI/ML",
       "Integrasi dengan berbagai VPS provider",
       "Antarmuka web yang user-friendly"
     ],
@@ -1302,12 +1302,12 @@ const providers = [
       "Membutuhkan instalasi agent di server",
       "Web panel terekspos ke internet"
     ],
-    "bestFor": "Developer dan tim yang ingin manajemen VPS lebih mudah tanpa kompleksitas DevOps berlebihan, terutama untuk PHP, Laravel, dan WordPress.",
+    "bestFor": "Developer dan tim yang ingin manajemen VPS lebih mudah tanpa kompleksitas DevOps berlebihan, terutama untuk PHP, Laravel, dan Node.js.",
     "warning": "Cleavr adalah alat manajemen, bukan hosting. Anda tetap harus menyewa VPS dari provider seperti DigitalOcean atau AWS dan membayar biaya VPS tersebut.",
     "tableData": {
       "bandwidth": "Tergantung VPS provider",
       "autoDeploy": true,
-      "suitableFor": "PHP, Laravel, WordPress, Node.js"
+      "suitableFor": "PHP, Laravel, Node.js"
     }
   },
   {
@@ -1728,7 +1728,7 @@ const providers = [
     "rating": "4.2",
     "freeAvailable": false,
     "startingPrice": "$2.99/bulan",
-    "desc": "Web hosting budget-friendly dengan berbagai pilihan: shared hosting, cloud hosting, VPS, dan WordPress hosting. Cocok untuk pemula dan bisnis kecil.",
+    "desc": "Web hosting budget-friendly dengan berbagai pilihan: shared hosting, cloud hosting, dan VPS. Cocok untuk pemula dan bisnis kecil.",
     "plans": [
       {
         "name": "Premium",
@@ -1778,7 +1778,7 @@ const providers = [
     "tableData": {
       "bandwidth": "Unlimited (shared/cloud)",
       "autoDeploy": false,
-      "suitableFor": "Budget hosting, WordPress, Small business"
+      "suitableFor": "Budget hosting, Small business"
     }
   },
   {
