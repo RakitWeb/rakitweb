@@ -14,8 +14,7 @@ useHead(() => ({
     { name: 'author', content: 'RakitWeb' },
     { name: 'robots', content: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' },
 
-    // ── TrapStack: Meta signatures ───────────────────────────────────────
-    { name: 'generator', content: 'WordPress 6.4.3' },
+    // ── Site metadata ────────────────────────────────────────────────────
     { name: 'google-site-verification', content: 'trapstack-ga-verification-fake' },
     { name: 'docsearch:language', content: 'id' },
     { name: 'docsearch:version', content: '1.0.0' },
@@ -28,7 +27,6 @@ useHead(() => ({
     // RSS feeds
     { rel: 'alternate', type: 'application/rss+xml', title: 'RakitWeb Blog RSS', href: 'https://rakitweb.site/rss.xml' },
     { rel: 'alternate', type: 'application/atom+xml', title: 'RakitWeb Blog Atom', href: 'https://rakitweb.site/atom.xml' },
-    // Algolia DocSearch CSS signature (TrapStack)
     { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/@docsearch/css@3/dist/style.css', 'data-trapstack': 'algolia' }
   ],
 
